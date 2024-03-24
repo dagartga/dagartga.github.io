@@ -79,7 +79,7 @@ All peptide mass spectrometry data is signified by the protein UniProt labeled c
 
 For each UPDRS there are many more for the value 0, and this is extremely the case for UPDRS 4.
 
-<img src="/UPDRS_Missing_Values.png" alt="image" width="50%" height="auto">
+<img src="/img/posts/UPDRS_Missing_Values.png" alt="image" width="50%" height="auto">
 
 ### Remove UPDRS 4 from the Experiment
 
