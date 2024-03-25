@@ -72,10 +72,14 @@ All peptide mass spectrometry data is signified by the protein UniProt labeled c
 | **UDPRS 3** | 0 | 78 |
 | **UPDRS 4** | 0 | 20 |
 
-![](/img/posts/UPDRS1_Histogram_dark.png)
-![](/img/posts/UPDRS2_Histogram_dark.png)
-![](/img/posts/UPDRS3_Histogram_dark.png)
-![](/img/posts/UPDRS4_Histogram_dark.png)
+<img src="/img/posts/UPDRS1_Histogram_dark.png" alt="image" width="50%" height="auto">
+
+<img src="/img/posts/UPDRS2_Histogram_dark.png" alt="image" width="50%" height="auto">
+
+<img src="/img/posts/UPDRS3_Histogram_dark.png" alt="image" width="50%" height="auto">
+
+<img src="/img/posts/UPDRS4_Histogram_dark.png" alt="image" width="50%" height="auto">
+
 
 For each UPDRS there are many more for the value 0, and this is extremely the case for UPDRS 4.
 
@@ -111,9 +115,11 @@ Use the range of values for severity given from Wikipedia [3]
 
 After converting the targets into categories, there is significant class imbalance of the targets. The category "severe" is barely represented and will not perform well in a ML model. In order to adjust for this issue, **moderate and severe will be combined into a single category**. This will mean the model will now be determining whether a user will have mild vs non-mild symptoms (moderate/severe).
 
-![](/img/posts/UPDRS1_Cat_Bars_dark.png)
-![](/img/posts/UPDRS2_Cat_Bars_dark.png)
-![](/img/posts/UPDRS3_Cat_Bars_dark.png)
+<img src="/img/posts/UPDRS1_Cat_Bars_dark.png" alt="image" width="50%" height="auto">
+
+<img src="/img/posts/UPDRS2_Cat_Bars_dark.png" alt="image" width="50%" height="auto">
+
+<img src="/img/posts/UPDRS3_Cat_Bars_dark.png" alt="image" width="50%" height="auto">
 
 ## Feature Engineering
 
@@ -264,15 +270,16 @@ The UPDRS 3 AUC score for Max Depth the value of max_depth = 4 will be used even
 
 ### UPDRS 1 - Subsample Validation Curve
 
-![](/img/posts/Subsample_Val_Curve_UPDRS1_dark.png)
+<img src="/img/posts/Subsample_Val_Curve_UPDRS1_dark.png" alt="image" width="50%" height="auto">
+
 
 ### UPDRS 2 – Subsample Validation Curve
 
-![](/img/posts/Subsample_Val_Curve_UPDRS2_dark.png)
+<img src="/img/posts/Subsample_Val_Curve_UPDRS2_dark.png" alt="image" width="50%" height="auto">
 
 ### UPDRS 3 – Subsample Validation Curve
 
-![](/img/posts/Subsample_Val_Curve_UPDRS3_dark.png)
+<img src="/img/posts/Subsample_Val_Curve_UPDRS3_dark.png" alt="image" width="50%" height="auto">
 
 ## Fine Tuned Hyperparameter Comparison for XGBoost
 
