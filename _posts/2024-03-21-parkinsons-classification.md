@@ -501,7 +501,7 @@ The test data is a stratified holdout fold of the 5 Fold CV labeling which did n
 | --- | --- | --- | --- | --- |
 | 0.48 | 0.796 | 0.770 | 0.684 | 0.765 |
 
-![](/img/posts/cboost_updrs1_f1_curve.png)
+![](/img/posts/cboost_updrs1_f1_curve_dark.png)
 
 **CatBoost UPDRS 2**
 
@@ -509,7 +509,7 @@ The test data is a stratified holdout fold of the 5 Fold CV labeling which did n
 | --- | --- | --- | --- | --- |
 | 0.21 | 0.865 | 0.795 | 0.621 | 0.720 |
 
-![](/img/posts/cboost_updrs2_f1_curve.png)
+![](/img/posts/cboost_updrs2_f1_curve_dark.png)
 
 **CatBoost UPDRS 3**
 
@@ -517,7 +517,7 @@ The test data is a stratified holdout fold of the 5 Fold CV labeling which did n
 | --- | --- | --- | --- | --- |
 | 0.25 | 0.718 | 0.659 | 0.533 | 0.750 |
 
-![](/img/posts/cboost_updrs3_f1_curve.png)
+![](/img/posts/cboost_updrs3_f1_curve_dark.png)
 
 ---
 
