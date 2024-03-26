@@ -152,7 +152,9 @@ ___
 
 Looking at the missing values for each UPDRS, roughly 45% of the values are missing for UPDRS 4 which concludes me to remove this target from the prediction. It is primarily 0's and has almost half of the values missing, thus it will not be a good target to learn from and predict.
 
-<img src="/img/posts/UPDRS_Missing_Values_dark.png" alt="image" width="25%" height="auto">
+<div style="text-align:center;">
+  <img src="/img/posts/UPDRS_Missing_Values_dark.png" alt="image" width="50%" height="auto">
+</div>
 
 
 ### Convert the Target from a Continuous Value to a Catgorical Value
@@ -311,7 +313,9 @@ Using 5 fold Cross Validation and taking the mean results of each the 5 holdout 
 
 The distribution of visit months is most high in the 0 to 24 range. Perhaps the later visit months are actually only adding noise because the protein changes have already happened and may have a delayed effect on the symptoms.
 
-![](/img/posts/Visit_Month_Distribution_dark.png)
+<div style="text-align:center;">
+  <img src="/img/posts/Visit_Month_Distribution_dark.png" alt="image" width="50%" height="auto">
+</div>
 
 ### UPDRS Categorical Max Values in the First 12 Months
 
