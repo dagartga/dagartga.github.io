@@ -26,6 +26,7 @@ In this project we use three boosted classification models and Synthetic Minorit
     - [Add Medication Data](#on-medication)
 - [05. Interpreting The Results](#interpret-results)
 - [06. Growth & Next Steps](#growth-next-steps)
+- [Appendix: Footnotes](#footnotes)
 
 ___
 
@@ -87,6 +88,10 @@ The default model parameters with no SMOTE and no medication data gave AUC-ROC a
 <br>
 
 ## Growth/Next Steps <a name="overview-growth"></a>
+
+While these models perform quite well, next steps would be to try to use bigger compute power to generate and train models using the combination of protein values and peptide values. Unfortunately, on our local machine this number becomes massive and is not reasonable for training times.
+
+Another idea is to using domain knowledge to specifically find proteins that are known to interact and generate new features from that subset. This would require an expert in Parkinsons biochemistry to know which proteins and peptides are of interest. Because there are 227 unique proteins and 968 unique peptides, the amount of research into each protein and peptide would not be doable by a hobbyist.
 
 <br>
 <br>
@@ -969,8 +974,11 @@ ___
 - **Precision:** **0.586**
 
 <br>
+<br>
 
-Footnotes:
+___
+
+# Appendix: Footnotes <a name="footnotes"></a>
 
 1. [https://www.kaggle.com/competitions/amp-parkinsons-disease-progression-prediction](https://www.kaggle.com/competitions/amp-parkinsons-disease-progression-prediction)<a name="footnote-1"></a>
 2. [https://www.kaggle.com/competitions/amp-parkinsons-disease-progression-prediction/data](https://www.kaggle.com/competitions/amp-parkinsons-disease-progression-prediction/data)<a name="footnote-2"></a>
