@@ -134,14 +134,10 @@ All peptide mass spectrometry data is signified by the protein UniProt labeled c
 | **UDPRS 3** | 0 | 78 |
 | **UPDRS 4** | 0 | 20 |
 
-<div class="row">
-  <div class="column">
-    <img src="/img/posts/UPDRS1_Histogram_dark.png" alt="image" style="width:50%">
-  </div>
-  <div class="column">
-    <img src="/img/posts/UPDRS2_Histogram_dark.png" alt="image" style="width:50%">
-  </div>
-</div>
+
+<img src="/img/posts/UPDRS1_Histogram_dark.png" alt="image" style="width:70%">
+
+<img src="/img/posts/UPDRS2_Histogram_dark.png" alt="image" style="width:70%">
 
 <div style="text-align:center;">
 <img src="/img/posts/UPDRS1_Histogram_dark.png" alt="image" width="50%" height="auto">
