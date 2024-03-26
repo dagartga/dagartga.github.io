@@ -33,7 +33,7 @@ ___
 
 ## Context <a name="overview-context"></a>
 
-Parkinson's disease (PD) is a disabling brain disorder that affects movements, cognition, sleep, and other normal functions. Unfortunately, there is no current cure—and the disease worsens over time. It's estimated that by 2037, 1.6 million people in the U.S. will have Parkinson's disease, at an economic cost approaching $80 billion. Research indicates that protein or peptide abnormalities play a key role in the onset and worsening of this disease [1].
+Parkinson's disease (PD) is a disabling brain disorder that affects movements, cognition, sleep, and other normal functions. Unfortunately, there is no current cure—and the disease worsens over time. It's estimated that by 2037, 1.6 million people in the U.S. will have Parkinson's disease, at an economic cost approaching $80 billion. Research indicates that protein or peptide abnormalities play a key role in the onset and worsening of this disease [1](#footnote-1).
 
 Three tree based ensemble models are compared for predicting the categorical UPDRS rating of Parkinsons symptoms. The models compared are XGBoost, LightGBM, and CatBoost. Additionally, the data is filtered to the first 12 months of visits for improved performance and a few engineered features are added. The target shows a significant imbalance in classes and so SMOTE (Synthetic Minority Oversampling Technique) is used to balance the target for training. Model hyperparameter tuning is performed using the hyperopt package which uses Bayesian optimization for exploring the search space of hyperparameters. Lastly, the information of whether the patient was on medication during the clinical visit is compared for model performance. The medication information has many missing values but shows predictive improvement in UPDRS 1 and UPDRS 3. AUC-ROC is used as the main comparison metric between models. The categorical threshold for the probability classification is fine-tuned to optimize in favor of Recall while also looking at the highest F1 score. Recall is favored over Precision to minimize False Negatives, which could cause patients to not seek treatment sooner. While False Positives have a negative impact on a patient, because they will likely have more frequent doctors visits, it is not as negatively impactful as a "likely" Parkinson's patient misdiagnosed as being "not at risk."
 
@@ -85,7 +85,7 @@ ___
 
 # Data Overview: <a name="data-overview"></a>
 
-All of the data are from a Kaggle competition that began on February 16, 2023 and ended on May 18, 2023. The core of the dataset consists of protein abundance values derived from mass spectrometry readings of cerebrospinal fluid (CSF) samples gathered from several hundred patients [2]. As well, there is a column indicating whether the patient was taking any medication during the UPDRS assessment. This can affect motor function scores and is represented in the column "upd23b_clinical_state_on_medication."
+All of the data are from a Kaggle competition that began on February 16, 2023 and ended on May 18, 2023. The core of the dataset consists of protein abundance values derived from mass spectrometry readings of cerebrospinal fluid (CSF) samples gathered from several hundred patients [2](#footnote-2). As well, there is a column indicating whether the patient was taking any medication during the UPDRS assessment. This can affect motor function scores and is represented in the column "upd23b_clinical_state_on_medication."
 
 <br>
 
@@ -152,7 +152,7 @@ Looking at the missing values for each UPDRS, roughly 45% of the values are miss
 
 ### Convert the Target from a Continuous Value to a Catgorical Value
 
-Rather than use a continous value as the target, binning the values into different categories of severity provides a better signal of eventual outcome. Use the range of values for severity given from Wikipedia [3]
+Rather than use a continous value as the target, binning the values into different categories of severity provides a better signal of eventual outcome. Use the range of values for severity given from Wikipedia [3](#footnote-3)
 
 | **UPDRS 1** | **Min** | **Max** |
 | --- | --- | --- |
@@ -225,15 +225,15 @@ With the high number of features (proteins and peptides) and low correlation of 
 
 ### LightGBM
 
-A gradient boosting ensemble model that grows leaf-wise, meaning only a single leaf is split when considering the gain. Leafwise growth can lead to overfitting and is best controlled by tuning the max tree depth. LightGBM uses histogram binning of data for determining splits. This can be controlled by parameters max\_bin and min\_data\_in\_bin. One key feature of LightGBM is the speed of training a model [4]. This performance comes mainly from exclusive feature bundling. The gradient boosting is expressed in the GOSS (Gradient One-Sided Sampling) which gives higher weights to the data points with larger gradients [5].
+A gradient boosting ensemble model that grows leaf-wise, meaning only a single leaf is split when considering the gain. Leafwise growth can lead to overfitting and is best controlled by tuning the max tree depth. LightGBM uses histogram binning of data for determining splits. This can be controlled by parameters max\_bin and min\_data\_in\_bin. One key feature of LightGBM is the speed of training a model [4](#footnote-4). This performance comes mainly from exclusive feature bundling. The gradient boosting is expressed in the GOSS (Gradient One-Sided Sampling) which gives higher weights to the data points with larger gradients [5](#footnote-5).
 
 ### XGBoost
 
-XGBoost or extreme gradient boosting uses depth wise growth for its trees. It uses CART (classification and regression trees) to score each leaf [6]. Sampling is simple bootstrap sampling with no weights used in splitting.
+XGBoost or extreme gradient boosting uses depth wise growth for its trees. It uses CART (classification and regression trees) to score each leaf [6](#footnote-6). Sampling is simple bootstrap sampling with no weights used in splitting.
 
 ### CatBoost
 
-A gradient boosting ensemble model that has specific benefits for categorical features. It does not require the user to preprocess the categorical features. The CatBoost model grows the Decision Trees symmetrically, meaning that at every depth level all of the nodes use the same split condition [7]. For splitting, the model uses Minimal Variance Sampling, which is performed at the tree level and optimizes the split scoring accuracy [8].
+A gradient boosting ensemble model that has specific benefits for categorical features. It does not require the user to preprocess the categorical features. The CatBoost model grows the Decision Trees symmetrically, meaning that at every depth level all of the nodes use the same split condition [7](#footnote-7). For splitting, the model uses Minimal Variance Sampling, which is performed at the tree level and optimizes the split scoring accuracy [8](#footnote=8).
 
 <br>
 <br>
@@ -420,7 +420,7 @@ ___
 
 ## Fine Tuned Hyperparameter Comparison for XGBoost
 
-**UPDRS 1**
+### UPDRS 1
 
 | **Hyperparam Opt** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -429,7 +429,7 @@ ___
 | **Scale Pos Wt** | 0.693 | 0.725 | 0.706 | 0.529 | 0.604 |
 | **Subsample** | 0.670 | 0.702 | 0.671 | 0.503 | 0.575 |
 
-**UPDRS 2**
+### UPDRS 2
 
 | **Hyperparam Opt** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -438,7 +438,7 @@ ___
 | **Scale Pos Wt** | 0.716 | 0.791 | 0.730 | 0.518 | 0.606 |
 | **Subsample** | 0.716 | 0.791 | 0.730 | 0.518 | 0.606 |
 
-**UPDRS 3**
+### UPDRS 3
 
 | **Hyperparam Opt** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -458,11 +458,11 @@ ___
 
 ## Hyperopt Hyperparameter Tuning
 
-Hyperopt is a python package for hyperparameter tuning that uses the algorithm Tree-based Parzen Estimators (TPE) to explore a search space of hyperparameter values and minimize a function, such as AUC score [8][9]. This hyperparameter tuning package allows for a faster way to cover combinations of hyperparameters that should improve performance.
+Hyperopt is a python package for hyperparameter tuning that uses the algorithm Tree-based Parzen Estimators (TPE) to explore a search space of hyperparameter values and minimize a function, such as AUC score [10](#footnote-10). This hyperparameter tuning package allows for a faster way to cover combinations of hyperparameters that should improve performance.
 
 <br>
 
-### XGBoost Hyperparameters to Tune[11]
+### XGBoost Hyperparameters to Tune[11](#footnote-11)
 
 - **max_depth**: the maximum depth of a tree. Deep trees can lead to overfitting while shallow trees may not predict as well. Tuning to find the minimum depth, meaning low variance, but with good performance on the evaluation metric.
 
@@ -484,7 +484,7 @@ Hyperopt is a python package for hyperparameter tuning that uses the algorithm T
 
 <br>
 
-### LightGBM Hyperparameters to Tune[12]
+### LightGBM Hyperparameters to Tune[12](#footnote-12)
 
 - **max_depth:** default is -1, which means no limit.
 
@@ -529,7 +529,7 @@ Hyperopt is a python package for hyperparameter tuning that uses the algorithm T
 
 ## Hyperopt Hyperparameter Tuning Results
 
-**UPDRS 1**
+### UPDRS 1
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -537,7 +537,7 @@ Hyperopt is a python package for hyperparameter tuning that uses the algorithm T
 | **LigthtGBM**| 0.673 | 0.696 | 0.628 | 0.561 | 0.593 |
 | **CatBoost**| 0.566 | 0.815 | 0.685 | 0.150 | 0.246 |
 
-**UPDRS 2**
+### UPDRS 2
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -545,7 +545,7 @@ Hyperopt is a python package for hyperparameter tuning that uses the algorithm T
 | **LigthtGBM**| 0.666 | 0.700 | 0.528 | 0.577 | 0.551 |
 | **CatBoost**| 0.583 | 0.861 | 0.610 | 0.186 | 0.295 |
 
-**UPDRS 3** 
+### UPDRS 3
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -582,7 +582,7 @@ By using Synthetic Minority Oversampling on the UPDRS values for the training da
 
 ### Overall SMOTE Results (Default Threshold):
 
-**UPDRS 1**
+### UPDRS 1
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -591,7 +591,7 @@ By using Synthetic Minority Oversampling on the UPDRS values for the training da
 | **CatBoost**| 0.722 | 0.717 | 0.699 | 0.771 | 0.733 |
 
 
-**UPDRS 2**
+### UPDRS 2
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -599,7 +599,7 @@ By using Synthetic Minority Oversampling on the UPDRS values for the training da
 | **LigthtGBM**| 0.767 | 0.765 | 0.783 | 0.734 | 0.758 |
 | **CatBoost**| 0.825 | 0.821 | 0.837 | 0.801 | 0.819 |
 
-**UPDRS 3**
+### UPDRS 3
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -617,9 +617,9 @@ ___
 
 By adjusting the classification threshold cutoff for each of the models, the recall and precision can be optimized for the performance needs.
 
-### Threshold for SMOTE Trained Models (No Medication Data)
+## Threshold for SMOTE Trained Models (No Medication Data)
 
-**XGBoost UPDRS 1**
+### XGBoost UPDRS 1
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -627,7 +627,7 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 ![](/img/posts/xgb_updrs1_opt_no_meds.png)
 
-**XGBoost UPDRS 2**
+### XGBoost UPDRS 2
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -635,7 +635,7 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 ![](/img/posts/xgb_updrs2_opt_no_meds.png)
 
-**XGBoost UPDRS 3**
+### XGBoost UPDRS 3
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -643,7 +643,7 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 ![](/img/posts/xgb_updrs3_opt_no_meds.png)
 
-**LightGBM UPDRS 1**
+### LightGBM UPDRS 1
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -651,7 +651,7 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 ![](/img/posts/lgb_updrs1_opt_no_meds.png)
 
-**LightGBM UPDRS 2**
+### LightGBM UPDRS 2
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -659,7 +659,7 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 ![](/img/posts/lgb_updrs2_opt_no_meds.png)
 
-**LightGBM UPDRS 3**
+### LightGBM UPDRS 3
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -667,7 +667,7 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 ![](/img/posts/lgb_updrs3_opt_no_meds.png)
 
-**CatBoost UPDRS 1**
+### CatBoost UPDRS 1
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -675,7 +675,7 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 ![](/img/posts/cb_updrs1_opt_no_meds.png)
 
-**CatBoost UPDRS 2**
+### CatBoost UPDRS 2
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -683,7 +683,7 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 ![](/img/posts/cb_updrs1_opt_no_meds.png)
 
-**CatBoost UPDRS 3**
+### CatBoost UPDRS 3
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -700,9 +700,9 @@ ___
 
 There is data on whether the patient was on medication during the clinical visit. This can affect the value of the UPDRS score.
 
-### Overall Results with medication data included (Default Threshold):
+## Overall Results with medication data included (Default Threshold):
 
-**UPDRS 1**
+### UPDRS 1
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -710,7 +710,7 @@ There is data on whether the patient was on medication during the clinical visit
 | **LigthtGBM**| 0.737 | 0.734 | 0.761 | 0.680 | 0.718 |
 | **CatBoost**| 0.767 | 0.764 | 0.771 | 0.756 | 0.763 |
 
-**UPDRS 2**
+### UPDRS 2
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -718,7 +718,7 @@ There is data on whether the patient was on medication during the clinical visit
 | **LigthtGBM**| 0.808 | 0.807 | 0.828 | 0.768 | 0.797 |
 | **CatBoost**| 0.848 | 0.845 | 0.854 | 0.832 | 0.843 |
 
-**UPDRS 3**
+### UPDRS 3
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -728,9 +728,9 @@ There is data on whether the patient was on medication during the clinical visit
 
 ___
 
-### Threshold for SMOTE Trained Models (No Medication Data)
+## Threshold for SMOTE Trained Models (No Medication Data)
 
-**XGBoost UPDRS 1**
+### XGBoost UPDRS 1
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -739,7 +739,7 @@ ___
 
 ![](/img/posts/xgb_updrs1_opt.png)
 
-**XGBoost UPDRS 2**
+### XGBoost UPDRS 2
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -747,7 +747,7 @@ ___
 
 ![](/img/posts/xgb_updrs2_opt.png)
 
-**XGBoost UPDRS 3**
+### XGBoost UPDRS 3
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -755,7 +755,7 @@ ___
 
 ![](/img/posts/xgb_updrs3_opt.png)
 
-**LightGBM UPDRS 1**
+### LightGBM UPDRS 1
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -763,7 +763,7 @@ ___
 
 ![](/img/posts/lgb_updrs1_opt.png)
 
-**LightGBM UPDRS 2**
+### LightGBM UPDRS 2
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -771,7 +771,7 @@ ___
 
 ![](/img/posts/lgb_updrs2_opt.png)
 
-**LightGBM UPDRS 3**
+### LightGBM UPDRS 3
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -779,7 +779,7 @@ ___
 
 ![](/img/posts/lgb_updrs3_opt.png)
 
-**CatBoost UPDRS 1**
+### CatBoost UPDRS 1
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -787,7 +787,7 @@ ___
 
 ![](/img/posts/cb_updrs1_opt.png)
 
-**CatBoost UPDRS 2**
+### CatBoost UPDRS 2
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -795,7 +795,7 @@ ___
 
 ![](/img/posts/cb_updrs2_opt.png)
 
-**CatBoost UPDRS 3**
+### CatBoost UPDRS 3
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
@@ -807,20 +807,32 @@ ___
 
 ## Summary of Best Performance Models
 
-**UPDRS 1 Prediction on Test Data**
+### UPDRS 1 Prediction on Test Data
 
 - CatBoost Hyperopt SMOTE model:
 - **AUC:** **0.796**
+- **Recall:** **0.765**
+- **Precision:** **0.864**
 
-**UPDRS 2 Prediction on Test Data**
+<br>
+
+### UPDRS 2 Prediction on Test Data
 
 - CatBoost Hyperopt SMOTE Medication model:
 - **AUC:** **0.881**
+- **Recall:** **0.720**
+- **Precision:** **0.692**
 
-**UPDRS 3 Prediction on Test Data**
+<br>
 
-- LGBoost Hyperopt SMOTE Medication model:
+### UPDRS 3 Prediction on Test Data
+
+- LightGBM Hyperopt SMOTE Medication model:
 - **AUC:** **0.729**
+- **Recall:** **0.781**
+- **Precision:** **0.586**
+
+<br>
 
 Footnotes:
 
