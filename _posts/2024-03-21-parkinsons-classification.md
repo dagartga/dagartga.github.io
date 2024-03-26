@@ -776,27 +776,28 @@ ___
 
 ### XGBoost UPDRS 1
 
-| Threshold | AUC | Accuracy | Precision | Recall |
-| --- | --- | --- | --- | --- |
-| 0.5 | 0.750 | 0.724 | 0.639 | 0.676 |
-
-
 <div style="text-align:center;">
   <img src="/img/posts/xgb_updrs1_opt.png" alt="image" width="50%" height="auto">
 </div>
 
+| Threshold | AUC | Accuracy | Precision | Recall |
+| --- | --- | --- | --- | --- |
+| 0.5 | 0.750 | 0.724 | 0.639 | 0.676 |
+
+<br>
 <br>
 
 ### XGBoost UPDRS 2
-
-| Threshold | AUC | Accuracy | Precision | Recall |
-| --- | --- | --- | --- | --- |
-| 0.33 | 0.853 | 0.716 | 0.5 | 0.8 | 
 
 <div style="text-align:center;">
   <img src="/img/posts/xgb_updrs2_opt.png" alt="image" width="50%" height="auto">
 </div>
 
+| Threshold | AUC | Accuracy | Precision | Recall |
+| --- | --- | --- | --- | --- |
+| 0.33 | 0.853 | 0.716 | 0.5 | 0.8 | 
+
+<br>
 <br>
 
 ### XGBoost UPDRS 3
