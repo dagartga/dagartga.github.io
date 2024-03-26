@@ -825,6 +825,8 @@ ___
   <img src="/img/posts/xgb_updrs2_opt.png" alt="image" width="50%" height="auto">
 </div>
 
+<br>
+
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
 | 0.33 | 0.853 | 0.716 | 0.5 | 0.8 | 
@@ -927,6 +929,8 @@ ___
 <div style="text-align:center;">
   <img src="/img/posts/cb_updrs3_opt.png" alt="image" width="50%" height="auto">
 </div>
+
+<br>
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
