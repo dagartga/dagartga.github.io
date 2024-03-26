@@ -538,7 +538,7 @@ ___
 
 By adjusting the classification threshold cutoff for each of the models, the recall and precision can be optimized for the performance needs.
 
-The test data is a stratified holdout fold of the 5 Fold CV labeling which did not have SMOTE performed on the data.
+### Threshold for SMOTE Trained Models (No Medication Data)
 
 **XGBoost UPDRS 1**
 
@@ -546,7 +546,7 @@ The test data is a stratified holdout fold of the 5 Fold CV labeling which did n
 | --- | --- | --- | --- | --- |
 | 0.4 | 0.750 | 0.655 | 0.537 | 0.853 |
 
-![](/img/posts/xgb_updrs1_f1_curve_dark.png)
+![](/img/posts/xgb_updrs1_opt_no_meds.png)
 
 **XGBoost UPDRS 2**
 
@@ -554,7 +554,7 @@ The test data is a stratified holdout fold of the 5 Fold CV labeling which did n
 | --- | --- | --- | --- | --- |
 | 0.17 | 0.860 | 0.636 | 0.436 | 0.960 |
 
-![](/img/posts/xgb_updrs2_f1_curve_dark.png)
+![](/img/posts/xgb_updrs2_opt_no_meds.png)
 
 **XGBoost UPDRS 3**
 
@@ -562,7 +562,7 @@ The test data is a stratified holdout fold of the 5 Fold CV labeling which did n
 | --- | --- | --- | --- | --- |
 | 0.15 | 0.643 | 0.388 | 0.378 | 0.969 |
 
-![](/img/posts/xgb_updrs2_f1_curve_dark.png)
+![](/img/posts/xgb_updrs3_opt_no_meds.png)
 
 **LightGBM UPDRS 1**
 
@@ -570,7 +570,7 @@ The test data is a stratified holdout fold of the 5 Fold CV labeling which did n
 | --- | --- | --- | --- | --- |
 | 0.4 | 0.759 | 0.690 | 0.571 | 0.824 |
 
-![](/img/posts/lgb_updrs1_f1_curve_dark.png)
+![](/img/posts/lgb_updrs1_opt_no_meds.png)
 
 **LightGBM UPDRS 2**
 
@@ -578,7 +578,7 @@ The test data is a stratified holdout fold of the 5 Fold CV labeling which did n
 | --- | --- | --- | --- | --- |
 | 0.38 | 0.785 | 0.716 | 0.500 | 0.720 |
 
-![](/img/posts/lgb_updrs2_f1_curve_dark.png)
+![](/img/posts/lgb_updrs2_opt_no_meds.png)
 
 **LightGBM UPDRS 3**
 
@@ -586,7 +586,7 @@ The test data is a stratified holdout fold of the 5 Fold CV labeling which did n
 | --- | --- | --- | --- | --- |
 | 0.30 | 0.703 | 0.694 | 0.568 | 0.781 | 
 
-![](/img/posts/lgb_updrs3_f1_curve_dark.png)
+![](/img/posts/lgb_updrs3_opt_no_meds.png)
 
 **CatBoost UPDRS 1**
 
@@ -594,7 +594,7 @@ The test data is a stratified holdout fold of the 5 Fold CV labeling which did n
 | --- | --- | --- | --- | --- |
 | 0.48 | 0.796 | 0.770 | 0.684 | 0.765 |
 
-![](/img/posts/cboost_updrs1_f1_curve_dark.png)
+![](/img/posts/cb_updrs1_opt_no_meds.png)
 
 **CatBoost UPDRS 2**
 
@@ -602,7 +602,7 @@ The test data is a stratified holdout fold of the 5 Fold CV labeling which did n
 | --- | --- | --- | --- | --- |
 | 0.21 | 0.865 | 0.795 | 0.621 | 0.720 |
 
-![](/img/posts/cboost_updrs2_f1_curve_dark.png)
+![](/img/posts/cb_updrs1_opt_no_meds.png)
 
 **CatBoost UPDRS 3**
 
@@ -610,7 +610,7 @@ The test data is a stratified holdout fold of the 5 Fold CV labeling which did n
 | --- | --- | --- | --- | --- |
 | 0.25 | 0.718 | 0.659 | 0.533 | 0.750 |
 
-![](/img/posts/cboost_updrs3_f1_curve_dark.png)
+![](/img/posts/cb_updrs1_opt_no_meds.png)
 
 <br>
 <br>
@@ -647,9 +647,9 @@ There is data on whether the patient was on medication during the clinical visit
 | **LigthtGBM**| 0.725 | 0.726 | 0.776 | 0.648 | 0.706 |
 | **CatBoost**| 0.717 | 0.715 | 0.739 | 0.678 | 0.707 |
 
----
+___
 
-### Fine-Tune Classification Threshold
+### Threshold for SMOTE Trained Models (No Medication Data)
 
 **XGBoost UPDRS 1**
 
@@ -658,7 +658,7 @@ There is data on whether the patient was on medication during the clinical visit
 | 0.5 | 0.750 | 0.724 | 0.639 | 0.676 |
 
 
-![](/img/posts/xgb_updrs1_f1_curve_smote_dark.png)
+![](/img/posts/xgb_updrs1_opt.png)
 
 **XGBoost UPDRS 2**
 
@@ -666,7 +666,7 @@ There is data on whether the patient was on medication during the clinical visit
 | --- | --- | --- | --- | --- |
 | 0.33 | 0.853 | 0.716 | 0.5 | 0.8 | 
 
-![](/img/posts/xgb_updrs2_f1_curve_smote_dark.png)
+![](/img/posts/xgb_updrs2_opt.png)
 
 **XGBoost UPDRS 3**
 
@@ -674,7 +674,7 @@ There is data on whether the patient was on medication during the clinical visit
 | --- | --- | --- | --- | --- |
 | 0.52 | 0.676 | 0.624 | 0.5 | 0.72 | 
 
-![](/img/posts/xgb_updrs3_f1_curve_smote_dark.png)
+![](/img/posts/xgb_updrs3_opt.png)
 
 **LightGBM UPDRS 1**
 
@@ -682,7 +682,7 @@ There is data on whether the patient was on medication during the clinical visit
 | --- | --- | --- | --- | --- |
 | 0.35 | 0.768 | 0.644 | 0.528 | 0.824 |
 
-![](/img/posts/1gb_updrs1_f1_curve_smote_dark.png)
+![](/img/posts/lgb_updrs1_opt.png)
 
 **LightGBM UPDRS 2**
 
@@ -690,7 +690,7 @@ There is data on whether the patient was on medication during the clinical visit
 | --- | --- | --- | --- | --- |
 | 0.42 | 0.856 | 0.830 | 0.667 | 0.8 |
 
-![](/img/posts/lgb_updrs2_f1_curve_smote_dark.png)
+![](/img/posts/lgb_updrs2_opt.png)
 
 **LightGBM UPDRS 3**
 
@@ -698,7 +698,7 @@ There is data on whether the patient was on medication during the clinical visit
 | --- | --- | --- | --- | --- |
 | 0.28 | 0.729 | 0.682 | 0.556| 0.781 | 
 
-![](/img/posts/lgb_updrs3_f1_curve_smote_dark.png)
+![](/img/posts/lgb_updrs3_opt.png)
 
 **CatBoost UPDRS 1**
 
@@ -706,7 +706,7 @@ There is data on whether the patient was on medication during the clinical visit
 | --- | --- | --- | --- | --- |
 | 0.36 | 0.769 | 0.655 | 0.540 | 0.794 | 
 
-![](/img/posts/cboost_updrs1_f1_curve_smote.png)
+![](/img/posts/cb_updrs1_opt.png)
 
 **CatBoost UPDRS 2**
 
@@ -714,7 +714,7 @@ There is data on whether the patient was on medication during the clinical visit
 | --- | --- | --- | --- | --- |
 | 0.22 | 0.881 | 0.830 | 0.692| 0.720 |
 
-![](/img/posts/cboost_updrs2_f1_curve_smote.png)
+![](/img/posts/cb_updrs2_opt.png)
 
 **CatBoost UPDRS 3**
 
@@ -722,7 +722,7 @@ There is data on whether the patient was on medication during the clinical visit
 | --- | --- | --- | --- | --- |
 | 0.13 | 0.587 | 0.494 | 0.410 | 0.781 |
 
-![](/img/posts/cboost_updrs3_f1_curve_smote.png)
+![](/img/posts/cb_updrs3_opt.png)
 
 ---
 
