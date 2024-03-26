@@ -127,13 +127,9 @@ All peptide mass spectrometry data is signified by the protein UniProt labeled c
 
 **227 Unique Proteins**
 
-| **Metric** | **Min** | **Max** |
-| --- | --- | --- |
-| **UPDRS 1** | 0 | 33 |
-| **UDPRS 2** | 0 | 29 |
-| **UDPRS 3** | 0 | 78 |
-| **UPDRS 4** | 0 | 20 |
+#### Distribution of Values
 
+<br>
 
 ![](/img/posts/UPDRS1_Histogram_dark2.png)
 ![](/img/posts/UPDRS2_Histogram_dark2.png)
@@ -152,10 +148,14 @@ ___
 
 Looking at the missing values for each UPDRS, roughly 45% of the values are missing for UPDRS 4 which concludes me to remove this target from the prediction. It is primarily 0's and has almost half of the values missing, thus it will not be a good target to learn from and predict.
 
+<br>
+
 <div style="text-align:center;">
   <img src="/img/posts/UPDRS_Missing_Values_dark.png" alt="image" width="50%" height="auto">
 </div>
 
+<br>
+<br>
 
 ### Convert the Target from a Continuous Value to a Catgorical Value
 
@@ -179,10 +179,13 @@ Rather than use a continous value as the target, binning the values into differe
 | Moderate | 33 | 58 |
 | Severe | 59 | 132 |
 
+<br>
+<br>
+
 ### Combine the Moderate and Severe Categories
 
 After converting the targets into categories, there is significant class imbalance of the targets. The category "severe" is barely represented and will not perform well in a ML model. In order to adjust for this issue, **moderate and severe will be combined into a single category**. This will mean the model will now be determining whether a user will have mild vs non-mild symptoms (moderate/severe).
-
+<br>
 
 ![](/img/posts/UPDRS1_Cat_Bars_dark2.png)
 ![](/img/posts/UPDRS2_Cat_Bars_dark2.png)
@@ -213,6 +216,7 @@ ___
 
 #### Protein X Protein
 - Combinations of protein values multiplied by each other was implemented on the data. Because this grew the number of features exponentially, it meant the training time for the model was far too long for any benefit. The correlation values of the protein x protein columns to the UPDRS values were not showing that there was a benefit to using the engineered feature. As well, the data explodes to 51,302 protein x protein combinations.
+
 <br>
 <br>
 
@@ -245,7 +249,7 @@ ___
 
 Using 5 fold Cross Validation and taking the mean results of each the 5 holdout sets for default hyperparameters for each model.
 
-**UPDRS 1**
+### UPDRS 1
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -253,7 +257,9 @@ Using 5 fold Cross Validation and taking the mean results of each the 5 holdout 
 | **LigthtGBM** | 0.582 | 0.822 | 0.736 | 0.181 | 0.290 |
 | **CatBoost** | 0.542 | 0.813 | 0.793 | 0.090 | 0.159 |
 
-**UPDRS 2**
+<br>
+
+### UPDRS 2
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -261,8 +267,9 @@ Using 5 fold Cross Validation and taking the mean results of each the 5 holdout 
 | **LigthtGBM** | 0.580 | 0.872 | 0.847 | 0.165 | 0.276 |
 | **CatBoost** | 0.543 | 0.863 | 0.850 | 0.088 | 0.160 |
 
+<br>
 
- **UPDRS 3**
+### UPDRS 3
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -281,7 +288,7 @@ ___
 
 Using 5 fold Cross Validation and taking the mean results of each the 5 holdout sets for best hyperparameters from the tuning package hyperopt for each model.
 
-**UPDRS 1**
+### UPDRS 1
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -289,7 +296,9 @@ Using 5 fold Cross Validation and taking the mean results of each the 5 holdout 
 | **LigthtGBM**| 0.566 | 0.797 | 0.485 | 0.180 | 0.263 |
 | **CatBoost**| 0.566 | 0.815 | 0.685 | 0.150 | 0.246 |
 
-**UPDRS 2**
+<br>
+
+### UPDRS 2
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
@@ -297,13 +306,18 @@ Using 5 fold Cross Validation and taking the mean results of each the 5 holdout 
 | **LigthtGBM** | 0.569 | 0.851 | 0.518 | 0.169 | 0.255 |
 | **CatBoost** | 0.583 | 0.861 | 0.610 | 0.186 | 0.285 |
 
-**UPDRS 3**
+<br>
+
+### UPDRS 3
 
 | **Model** | **AUC** | **Accuracy** | **Precision** | **Recall** | **F1** |
 | --- | --- | --- | --- | --- | --- |
 | **XGBoost**| 0.619 | 0.859 | 0.728 | 0.257 | 0.380 |
 | **LigthtGBM**| 0.617 | 0.854 | 0.666 | 0.260 | 0.374 |
 | **CatBoost**| 0.586 | 0.836 | 0.524 | 0.208 | 0.298 |
+
+<br>
+<br>
 
 ### Hyperopt Conclusion:
 
@@ -316,6 +330,9 @@ The distribution of visit months is most high in the 0 to 24 range. Perhaps the 
 <div style="text-align:center;">
   <img src="/img/posts/Visit_Month_Distribution_dark.png" alt="image" width="50%" height="auto">
 </div>
+
+<br>
+<br>
 
 ### UPDRS Categorical Max Values in the First 12 Months
 
