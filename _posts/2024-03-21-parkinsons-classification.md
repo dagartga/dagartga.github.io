@@ -321,7 +321,12 @@ Using 5 fold Cross Validation and taking the mean results of each the 5 holdout 
 
 ### Hyperopt Conclusion:
 
-- The hyperparameter optimization showed an improvement mainly for XGBoost across each UPDRS.
+The hyperparameter optimization showed an improvement mainly for XGBoost across each UPDRS.
+
+<br>
+<br>
+
+___
 
 # 12 Months of Protein and Peptide Data <a name="twelve-months"></a>
 
@@ -336,11 +341,16 @@ The distribution of visit months is most high in the 0 to 24 range. Perhaps the 
 
 ### UPDRS Categorical Max Values in the First 12 Months
 
+<br>
+
 - For **UPDRS 1**, **84.84%** of patients hit their max category in the first twelve months
 = For **UPDRS 2**, **86.48%** of patients hit their max category in the first twelve months
 - For **UPDRS 3**, **82.38%** of patients hit their max category in the first twelve months
 
 This shows that the first 12 months may give more valuable data in terms of the categorical target.
+
+<br>
+<br>
 
 **Approximately 50% of the patients who get Parkinson's diagnosis get it within the first 12 months of visits.**
 
@@ -350,10 +360,16 @@ This shows that the first 12 months may give more valuable data in terms of the 
 
 **UPDRS 3:** 47% of the patients with max diagnosis of Parkinson's get it in 12 months
 
+<br>
+<br>
+
+___
 
 ## Prediction of Max Categorical Value using 12 Month Data
 
-Validation curves for the hyperparameters Max Depth and Subsample were tried for finding the optimal values of the hyperparameters. These two hyperparameters tend to have a large impact on the performance, so testing them manually gives more intuition on their effect. The validation curve was measured using the metric AUC-ROC .
+Validation curves for the hyperparameters Max Depth and Subsample were tried for finding the optimal values of the hyperparameters. These two hyperparameters tend to have a large impact on the performance, so testing them manually gives more intuition on their effect. The validation curve was measured using the metric AUC-ROC.
+
+<br>
 
 ### UPDRS 1 – Max Depth Validation Curve
 
@@ -361,11 +377,15 @@ Validation curves for the hyperparameters Max Depth and Subsample were tried for
 
 The UPDRS 1 AUC score for the validation curve for Max Depth showed a high value at max_depth = 6 and 8, Since 6 is lower and should be better for generalization, the Max Depth used was 6.
 
+<br>
+
 ### UPDRS 2 – Max Depth Validation Curve
 
 <img src="/img/posts//Max_Depth_Val_Curve_UPDRS2_dark.png" alt="image" width="50%" height="auto">
 
 The UPDRS 2 AUC score for the validation curve for Max Depth showed a high value at max_depth = 5
+
+<br>
 
 ### UPDRS 3 – Max Depth Validation Curve
 
@@ -373,18 +393,30 @@ The UPDRS 2 AUC score for the validation curve for Max Depth showed a high value
 
 The UPDRS 3 AUC score for Max Depth the value of max_depth = 4 will be used even though the best AUC was max\_depth = 8. But since the AUC values are close and max depth 4 will be better at generalizing, it will be used.
 
+
+<br>
+___
+
 ### UPDRS 1 - Subsample Validation Curve
 
 <img src="/img/posts/Subsample_Val_Curve_UPDRS1_dark.png" alt="image" width="50%" height="auto">
 
+<br>
 
 ### UPDRS 2 – Subsample Validation Curve
 
 <img src="/img/posts/Subsample_Val_Curve_UPDRS2_dark.png" alt="image" width="50%" height="auto">
 
+<br>
+
 ### UPDRS 3 – Subsample Validation Curve
 
 <img src="/img/posts/Subsample_Val_Curve_UPDRS3_dark.png" alt="image" width="50%" height="auto">
+
+<br>
+<br>
+
+___
 
 ## Fine Tuned Hyperparameter Comparison for XGBoost
 
