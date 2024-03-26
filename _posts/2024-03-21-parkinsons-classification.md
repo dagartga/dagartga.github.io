@@ -40,7 +40,6 @@ Three tree based ensemble models are compared for predicting the categorical UPD
 The default model parameters with no SMOTE and no medication data gave AUC-ROC around 0.59. The best performance for UPDRS 1 is AUC-ROC of 0.796 from a CatBoost Classifier using the Hyperopt hyperparameters and the data with SMOTE applied. The best performance for UPDRS 2 is AUC-ROC of 0.881 from a CatBoost Classifier using the Hyperopt hyperparameters, with the data medication data, and with SMOTE applied. The best performance for UPDRS 3 is AUC-ROC of 0.729 from a LightGBM Classifier using the Hyperopt hyperparameters, with the data medication data, and with SMOTE applied.
 
 <br>
-<br>
 
 ## Actions  <a name="overview-actions"></a>
 
@@ -57,11 +56,9 @@ The default model parameters with no SMOTE and no medication data gave AUC-ROC a
 10. Save best model for each UPDRS.
 
 <br>
-<br>
 
 ## Results  <a name="overview-results"></a>
 
-<br>
 <br>
 
 ### UPDRS 1 Prediction on Test Data
@@ -80,7 +77,6 @@ The default model parameters with no SMOTE and no medication data gave AUC-ROC a
 - **AUC: 0.729**
 
 <br>
-<br>
 
 ## Growth/Next Steps <a name="overview-growth"></a>
 
@@ -94,7 +90,6 @@ ___
 All of the data are from a Kaggle competition that began on February 16, 2023 and ended on May 18, 2023. The core of the dataset consists of protein abundance values derived from mass spectrometry readings of cerebrospinal fluid (CSF) samples gathered from several hundred patients [2]. As well, there is a column indicating whether the patient was taking any medication during the UPDRS assessment. This can affect motor function scores and is represented in the column "upd23b_clinical_state_on_medication."
 
 <br>
-<br>
 
 ### Dimensional Columns:
 
@@ -107,7 +102,6 @@ All protein only mass spectrometry data is signified by the column having only t
 All peptide mass spectrometry data is signified by the protein UniProt labeled concatenated to peptide sequence with an underscore as the separator.
 
 <br>
-<br>
 
 ### Metric Columns:
 
@@ -117,7 +111,6 @@ All peptide mass spectrometry data is signified by the protein UniProt labeled c
   - Values can be "On", "Off", or NaN if unknown.
 
 <br>
-<br>
 
 ### Data Statistics:
 
@@ -126,6 +119,8 @@ All peptide mass spectrometry data is signified by the protein UniProt labeled c
 **968 Unique Peptides**
 
 **227 Unique Proteins**
+
+<br>
 
 #### Distribution of Values
 
