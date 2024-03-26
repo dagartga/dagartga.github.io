@@ -31,7 +31,7 @@ ___
 
 # Project Overview  <a name="overview-main"></a>
 
-## Context: <a name="overview-context"></a>
+## Context <a name="overview-context"></a>
 
 Parkinson's disease (PD) is a disabling brain disorder that affects movements, cognition, sleep, and other normal functions. Unfortunately, there is no current cure—and the disease worsens over time. It's estimated that by 2037, 1.6 million people in the U.S. will have Parkinson's disease, at an economic cost approaching $80 billion. Research indicates that protein or peptide abnormalities play a key role in the onset and worsening of this disease [1].
 
@@ -60,6 +60,9 @@ The default model parameters with no SMOTE and no medication data gave AUC-ROC a
 <br>
 
 ## Results  <a name="overview-results"></a>
+
+<br>
+<br>
 
 ### UPDRS 1 Prediction on Test Data
 
@@ -90,6 +93,9 @@ ___
 
 All of the data are from a Kaggle competition that began on February 16, 2023 and ended on May 18, 2023. The core of the dataset consists of protein abundance values derived from mass spectrometry readings of cerebrospinal fluid (CSF) samples gathered from several hundred patients [2]. As well, there is a column indicating whether the patient was taking any medication during the UPDRS assessment. This can affect motor function scores and is represented in the column "upd23b_clinical_state_on_medication."
 
+<br>
+<br>
+
 ### Dimensional Columns:
 
 - **patient_id:** a unique identifier for each patient.
@@ -100,12 +106,18 @@ All protein only mass spectrometry data is signified by the column having only t
 
 All peptide mass spectrometry data is signified by the protein UniProt labeled concatenated to peptide sequence with an underscore as the separator.
 
+<br>
+<br>
+
 ### Metric Columns:
 
 - **protein UniProt label:** contains the mass spectrometry protein abundance.
 - **UniProt_peptide label:** contains the mass spectrometry for the peptide abundance.
 - **Upd23b_clinical_state_on_medication:** whether the patient was on medication during the visit.
   - Values can be "On", "Off", or NaN if unknown.
+
+<br>
+<br>
 
 ### Data Statistics:
 
@@ -122,13 +134,21 @@ All peptide mass spectrometry data is signified by the protein UniProt labeled c
 | **UDPRS 3** | 0 | 78 |
 | **UPDRS 4** | 0 | 20 |
 
+<div style="text-align:center;">
 <img src="/img/posts/UPDRS1_Histogram_dark.png" alt="image" width="50%" height="auto">
+</div>
 
+<div style="text-align:center;">
 <img src="/img/posts/UPDRS2_Histogram_dark.png" alt="image" width="50%" height="auto">
+</div>
 
+<div style="text-align:center;">
 <img src="/img/posts/UPDRS3_Histogram_dark.png" alt="image" width="50%" height="auto">
+</div>
 
+<div style="text-align:center;">
 <img src="/img/posts/UPDRS4_Histogram_dark.png" alt="image" width="50%" height="auto">
+</div>
 
 <br>
 <br>
