@@ -339,11 +339,11 @@ The distribution of visit months is most high in the 0 to 24 range. Perhaps the 
 ### UPDRS Categorical Max Values in the First 12 Months
 
 
-**UPDRS 1:** 58.9% of the patients with max diagnosis of Parkinson's get it in 12 months
+- **UPDRS 1:** 58.9% of the patients with max diagnosis of Parkinson's get it in 12 months
 
-**UPDRS 2:** 50% of the patients with max diagnosis of Parkinson's get it in 12 months
+- **UPDRS 2:** 50% of the patients with max diagnosis of Parkinson's get it in 12 months
 
-**UPDRS 3:** 47% of the patients with max diagnosis of Parkinson's get it in 12 months
+- **UPDRS 3:** 47% of the patients with max diagnosis of Parkinson's get it in 12 months
 
 Approximately 50% of the patients who get Parkinson's diagnosis get it within the first 12 months of visits. This shows that the **first 12 months may give more valuable data** in terms of the categorical target.
 
@@ -360,7 +360,9 @@ Validation curves for the hyperparameters Max Depth and Subsample were tried for
 
 ### UPDRS 1 – Max Depth Validation Curve
 
-<img src="/img/posts//Max_Depth_Val_Curve_UPDRS1_dark.png" alt="image" width="50%" height="auto">
+<div style="text-align:center;">
+  <img src="/img/posts//Max_Depth_Val_Curve_UPDRS1_dark.png" alt="image" width="50%" height="auto">
+</div>
 
 The UPDRS 1 AUC score for the validation curve for Max Depth showed a high value at max_depth = 6 and 8, Since 6 is lower and should be better for generalization, the Max Depth used was 6.
 
@@ -368,7 +370,9 @@ The UPDRS 1 AUC score for the validation curve for Max Depth showed a high value
 
 ### UPDRS 2 – Max Depth Validation Curve
 
-<img src="/img/posts//Max_Depth_Val_Curve_UPDRS2_dark.png" alt="image" width="50%" height="auto">
+<div style="text-align:center;">
+  <img src="/img/posts//Max_Depth_Val_Curve_UPDRS2_dark.png" alt="image" width="50%" height="auto">
+</div>
 
 The UPDRS 2 AUC score for the validation curve for Max Depth showed a high value at max_depth = 5
 
@@ -376,7 +380,10 @@ The UPDRS 2 AUC score for the validation curve for Max Depth showed a high value
 
 ### UPDRS 3 – Max Depth Validation Curve
 
-<img src="/img/posts//Max_Depth_Val_Curve_UPDRS3_dark.png" alt="image" width="50%" height="auto">
+<div style="text-align:center;">
+  <img src="/img/posts//Max_Depth_Val_Curve_UPDRS3_dark.png" alt="image" width="50%" height="auto">
+</div>
+
 
 The UPDRS 3 AUC score for Max Depth the value of max_depth = 4 will be used even though the best AUC was max\_depth = 8. But since the AUC values are close and max depth 4 will be better at generalizing, it will be used.
 
@@ -386,19 +393,25 @@ ___
 
 ### UPDRS 1 - Subsample Validation Curve
 
-<img src="/img/posts/Subsample_Val_Curve_UPDRS1_dark.png" alt="image" width="50%" height="auto">
+<div style="text-align:center;">
+  <img src="/img/posts/Subsample_Val_Curve_UPDRS1_dark.png" alt="image" width="50%" height="auto">
+</div>
 
 <br>
 
 ### UPDRS 2 – Subsample Validation Curve
 
-<img src="/img/posts/Subsample_Val_Curve_UPDRS2_dark.png" alt="image" width="50%" height="auto">
+<div style="text-align:center;">
+  <img src="/img/posts/Subsample_Val_Curve_UPDRS2_dark.png" alt="image" width="50%" height="auto">
+</div>
 
 <br>
 
 ### UPDRS 3 – Subsample Validation Curve
 
-<img src="/img/posts/Subsample_Val_Curve_UPDRS3_dark.png" alt="image" width="50%" height="auto">
+<div style="text-align:center;">
+  <img src="/img/posts/Subsample_Val_Curve_UPDRS3_dark.png" alt="image" width="50%" height="auto">
+</div>
 
 <br>
 <br>
@@ -438,9 +451,16 @@ By using only the 12 months of data to forecast for the max UPDRS value, the def
 
 The default hyperparameters perform quite well for XGBoost. When trying to optimize some of the hyperparameters manually, there is not much improvement except in the UPDRS 2. This mainly came from using the scale\_pos\_weight to balance out the target values.
 
+<br>
+<br>
+
+___
+
 ## Hyperopt Hyperparameter Tuning
 
 Hyperopt is a python package for hyperparameter tuning that uses the algorithm Tree-based Parzen Estimators (TPE) to explore a search space of hyperparameter values and minimize a function, such as AUC score [8][9]. This hyperparameter tuning package allows for a faster way to cover combinations of hyperparameters that should improve performance.
+
+<br>
 
 ### XGBoost Hyperparameters to Tune[11]
 
@@ -461,6 +481,8 @@ Hyperopt is a python package for hyperparameter tuning that uses the algorithm T
 - **learning_rate:** step wise shrinkage of the feature weights at each of the boosting steps. This prevents overfitting by decreasing the variance of the model. The default value is 0.3
 
 - **max_delta_step:** the maximum delta step each leaf is allowed. This can help when there is class imbalance in the data.
+
+<br>
 
 ### LightGBM Hyperparameters to Tune[12]
 
@@ -488,6 +510,8 @@ Hyperopt is a python package for hyperparameter tuning that uses the algorithm T
 
 - **max_delta_step:** default is 0.0. The final max output of leaves is learning\_rate \* max\_delta\_step. Used to limit the output of leaves.
 
+<br>
+
 ### CatBoost Hyperparameters to Tune:
 
 - **depth:** the max depth of a tree.The default is 6.
@@ -499,6 +523,9 @@ Hyperopt is a python package for hyperparameter tuning that uses the algorithm T
 - **min_data_in_leaf:** the minimum data required in a leaf node for a split. Default is None.
 
 - **l2_leaf_reg:** L2 (Ridge) regularization. Default is None
+
+<br>
+<br>
 
 ## Hyperopt Hyperparameter Tuning Results
 
@@ -550,6 +577,8 @@ By using Synthetic Minority Oversampling on the UPDRS values for the training da
 
 - **Class 0:** 227 samples
 - **Class 1:** 227 samples
+
+<br>
 
 ### Overall SMOTE Results (Default Threshold):
 
