@@ -631,21 +631,21 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 ### XGBoost UPDRS 1
 
-| Threshold | AUC | Accuracy | Precision | Recall |
-| --- | --- | --- | --- | --- |
-| 0.4 | 0.750 | 0.655 | 0.537 | 0.853 |
-
 <div style="text-align:center;">
   <img src="/img/posts/xgb_updrs1_opt_no_meds.png" alt="image" width="50%" height="auto">
 </div>
 
 <br>
 
-### XGBoost UPDRS 2
-
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
-| 0.17 | 0.860 | 0.636 | 0.436 | 0.960 |
+| 0.4 | 0.750 | 0.655 | 0.537 | 0.853 |
+
+
+<br>
+<br>
+
+### XGBoost UPDRS 2
 
 <div style="text-align:center;">
   <img src="/img/posts/xgb_updrs2_opt_no_meds.png" alt="image" width="50%" height="auto">
@@ -653,11 +653,14 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 <br>
 
-### XGBoost UPDRS 3
-
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
-| 0.15 | 0.643 | 0.388 | 0.378 | 0.969 |
+| 0.17 | 0.860 | 0.636 | 0.436 | 0.960 |
+
+<br>
+<br>
+
+### XGBoost UPDRS 3
 
 <div style="text-align:center;">
   <img src="/img/posts/xgb_updrs3_opt_no_meds.png" alt="image" width="50%" height="auto">
@@ -665,11 +668,15 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 <br>
 
-### LightGBM UPDRS 1
-
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
-| 0.4 | 0.759 | 0.690 | 0.571 | 0.824 |
+| 0.15 | 0.643 | 0.388 | 0.378 | 0.969 |
+
+
+<br>
+<br>
+
+### LightGBM UPDRS 1
 
 <div style="text-align:center;">
   <img src="/img/posts/lgb_updrs1_opt_no_meds.png" alt="image" width="50%" height="auto">
@@ -677,11 +684,15 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 <br>
 
-### LightGBM UPDRS 2
-
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
-| 0.38 | 0.785 | 0.716 | 0.500 | 0.720 |
+| 0.4 | 0.759 | 0.690 | 0.571 | 0.824 |
+
+
+<br>
+<br>
+
+### LightGBM UPDRS 2
 
 <div style="text-align:center;">
   <img src="/img/posts/lgb_updrs2_opt_no_meds.png" alt="image" width="50%" height="auto">
@@ -689,11 +700,14 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 <br>
 
-### LightGBM UPDRS 3
-
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
-| 0.30 | 0.703 | 0.694 | 0.568 | 0.781 | 
+| 0.38 | 0.785 | 0.716 | 0.500 | 0.720 |
+
+<br>
+<br>
+
+### LightGBM UPDRS 3
 
 <div style="text-align:center;">
   <img src="/img/posts/lgb_updrs3_opt_no_meds.png" alt="image" width="50%" height="auto">
@@ -701,11 +715,14 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 <br>
 
-### CatBoost UPDRS 1
-
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
-| 0.48 | 0.796 | 0.770 | 0.684 | 0.765 |
+| 0.30 | 0.703 | 0.694 | 0.568 | 0.781 | 
+
+<br>
+<br>
+
+### CatBoost UPDRS 1
 
 <div style="text-align:center;">
   <img src="/img/posts/cb_updrs1_opt_no_meds.png" alt="image" width="50%" height="auto">
@@ -713,11 +730,14 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 <br>
 
-### CatBoost UPDRS 2
-
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
-| 0.21 | 0.865 | 0.795 | 0.621 | 0.720 |
+| 0.48 | 0.796 | 0.770 | 0.684 | 0.765 |
+
+<br>
+<br>
+
+### CatBoost UPDRS 2
 
 <div style="text-align:center;">
   <img src="/img/posts/cb_updrs2_opt_no_meds.png" alt="image" width="50%" height="auto">
@@ -725,15 +745,25 @@ By adjusting the classification threshold cutoff for each of the models, the rec
 
 <br>
 
+| Threshold | AUC | Accuracy | Precision | Recall |
+| --- | --- | --- | --- | --- |
+| 0.21 | 0.865 | 0.795 | 0.621 | 0.720 |
+
+<br>
+<br>
+
 ### CatBoost UPDRS 3
+
+<div style="text-align:center;">
+  <img src="/img/posts/cb_updrs3_opt_no_meds.png" alt="image" width="50%" height="auto">
+</div>
+
+<br>
 
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
 | 0.25 | 0.718 | 0.659 | 0.533 | 0.750 |
 
-<div style="text-align:center;">
-  <img src="/img/posts/cb_updrs3_opt_no_meds.png" alt="image" width="50%" height="auto">
-</div>
 
 <br>
 <br>
@@ -780,6 +810,8 @@ ___
   <img src="/img/posts/xgb_updrs1_opt.png" alt="image" width="50%" height="auto">
 </div>
 
+<br>
+
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
 | 0.5 | 0.750 | 0.724 | 0.639 | 0.676 |
@@ -802,21 +834,20 @@ ___
 
 ### XGBoost UPDRS 3
 
-| Threshold | AUC | Accuracy | Precision | Recall |
-| --- | --- | --- | --- | --- |
-| 0.52 | 0.676 | 0.624 | 0.5 | 0.72 | 
-
 <div style="text-align:center;">
   <img src="/img/posts/xgb_updrs3_opt.png" alt="image" width="50%" height="auto">
 </div>
 
 <br>
 
-### LightGBM UPDRS 1
-
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
-| 0.35 | 0.768 | 0.644 | 0.528 | 0.824 |
+| 0.52 | 0.676 | 0.624 | 0.5 | 0.72 | 
+
+<br>
+<br>
+
+### LightGBM UPDRS 1
 
 <div style="text-align:center;">
   <img src="/img/posts/lgb_updrs1_opt.png" alt="image" width="50%" height="auto">
@@ -824,11 +855,14 @@ ___
 
 <br>
 
-### LightGBM UPDRS 2
-
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
-| 0.42 | 0.856 | 0.830 | 0.667 | 0.8 |
+| 0.35 | 0.768 | 0.644 | 0.528 | 0.824 |
+
+<br>
+<br>
+
+### LightGBM UPDRS 2
 
 <div style="text-align:center;">
   <img src="/img/posts/lgb_updrs2_opt.png" alt="image" width="50%" height="auto">
@@ -836,11 +870,14 @@ ___
 
 <br>
 
-### LightGBM UPDRS 3
-
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
-| 0.28 | 0.729 | 0.682 | 0.556| 0.781 | 
+| 0.42 | 0.856 | 0.830 | 0.667 | 0.8 |
+
+<br>
+<br>
+
+### LightGBM UPDRS 3
 
 <div style="text-align:center;">
   <img src="/img/posts/lgb_updrs3_opt.png" alt="image" width="50%" height="auto">
@@ -848,11 +885,14 @@ ___
 
 <br>
 
-### CatBoost UPDRS 1
-
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
-| 0.36 | 0.769 | 0.655 | 0.540 | 0.794 | 
+| 0.28 | 0.729 | 0.682 | 0.556| 0.781 | 
+
+<br>
+<br>
+
+### CatBoost UPDRS 1
 
 <div style="text-align:center;">
   <img src="/img/posts/cb_updrs1_opt.png" alt="image" width="50%" height="auto">
@@ -860,11 +900,14 @@ ___
 
 <br>
 
-### CatBoost UPDRS 2
-
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
-| 0.22 | 0.881 | 0.830 | 0.692| 0.720 |
+| 0.36 | 0.769 | 0.655 | 0.540 | 0.794 | 
+
+<br>
+<br>
+
+### CatBoost UPDRS 2
 
 <div style="text-align:center;">
   <img src="/img/posts/cb_updrs2_opt.png" alt="image" width="50%" height="auto">
@@ -872,16 +915,25 @@ ___
 
 <br>
 
-### CatBoost UPDRS 3
-
 | Threshold | AUC | Accuracy | Precision | Recall |
 | --- | --- | --- | --- | --- |
-| 0.13 | 0.587 | 0.494 | 0.410 | 0.781 |
+| 0.22 | 0.881 | 0.830 | 0.692| 0.720 |
+
+<br>
+<br>
+
+### CatBoost UPDRS 3
 
 <div style="text-align:center;">
   <img src="/img/posts/cb_updrs3_opt.png" alt="image" width="50%" height="auto">
 </div>
 
+| Threshold | AUC | Accuracy | Precision | Recall |
+| --- | --- | --- | --- | --- |
+| 0.13 | 0.587 | 0.494 | 0.410 | 0.781 |
+
+<br>
+<br>
 
 ___
 
