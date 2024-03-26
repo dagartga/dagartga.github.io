@@ -458,7 +458,7 @@ ___
 
 ## Hyperopt Hyperparameter Tuning
 
-Hyperopt is a python package for hyperparameter tuning that uses the algorithm Tree-based Parzen Estimators (TPE) to explore a search space of hyperparameter values and minimize a function, such as AUC score [10](#footnote-10). This hyperparameter tuning package allows for a faster way to cover combinations of hyperparameters that should improve performance.
+Hyperopt is a python package for hyperparameter tuning that uses the algorithm Tree-based Parzen Estimators (TPE)[9](#footnote-9) to explore a search space of hyperparameter values and minimize a function, such as AUC score [10](#footnote-10). This hyperparameter tuning package allows for a faster way to cover combinations of hyperparameters that should improve performance.
 
 <br>
 
@@ -512,7 +512,7 @@ Hyperopt is a python package for hyperparameter tuning that uses the algorithm T
 
 <br>
 
-### CatBoost Hyperparameters to Tune:
+### CatBoost Hyperparameters to Tune[13](#footnote-13)
 
 - **depth:** the max depth of a tree.The default is 6.
 
@@ -836,15 +836,16 @@ ___
 
 Footnotes:
 
-1. [https://www.kaggle.com/competitions/amp-parkinsons-disease-progression-prediction](https://www.kaggle.com/competitions/amp-parkinsons-disease-progression-prediction)
-2. [https://www.kaggle.com/competitions/amp-parkinsons-disease-progression-prediction/data](https://www.kaggle.com/competitions/amp-parkinsons-disease-progression-prediction/data)
-3. [https://en.wikipedia.org/wiki/Unified\_Parkinson%27s\_disease\_rating\_scale](https://en.wikipedia.org/wiki/Unified_Parkinson%27s_disease_rating_scale)
-4. [https://www.microsoft.com/en-us/research/wp-content/uploads/2017/11/lightgbm.pdf](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/11/lightgbm.pdf)
-5. [https://pro.arcgis.com/en/pro-app/latest/tool-reference/geoai/how-lightgbm-works.htm](https://pro.arcgis.com/en/pro-app/latest/tool-reference/geoai/how-lightgbm-works.htm)
-6. [https://xgboost.readthedocs.io/en/stable/tutorials/model.html](https://xgboost.readthedocs.io/en/stable/tutorials/model.html)
-7. [https://pro.arcgis.com/en/pro-app/latest/tool-reference/geoai/how-catboost-works.htm](https://pro.arcgis.com/en/pro-app/latest/tool-reference/geoai/how-catboost-works.htm)
-8. [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0262895](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0262895)
-9. [https://hyperopt.github.io/hyperopt/](https://hyperopt.github.io/hyperopt/)
-10. [https://towardsdatascience.com/hyperopt-demystified-3e14006eb6fa](https://towardsdatascience.com/hyperopt-demystified-3e14006eb6fa)
-11. [https://xgboost.readthedocs.io/en/latest/parameter.html](https://xgboost.readthedocs.io/en/latest/parameter.html)
-12. [https://lightgbm.readthedocs.io/en/latest/Parameters.html](https://lightgbm.readthedocs.io/en/latest/Parameters.html)
+1. [https://www.kaggle.com/competitions/amp-parkinsons-disease-progression-prediction](https://www.kaggle.com/competitions/amp-parkinsons-disease-progression-prediction)<a name="footnote-1"></a>
+2. [https://www.kaggle.com/competitions/amp-parkinsons-disease-progression-prediction/data](https://www.kaggle.com/competitions/amp-parkinsons-disease-progression-prediction/data)<a name="footnote-2"></a>
+3. [https://en.wikipedia.org/wiki/Unified\_Parkinson%27s\_disease\_rating\_scale](https://en.wikipedia.org/wiki/Unified_Parkinson%27s_disease_rating_scale)<a name="footnote-3"></a>
+4. [https://www.microsoft.com/en-us/research/wp-content/uploads/2017/11/lightgbm.pdf](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/11/lightgbm.pdf)<a name="footnote-4"></a>
+5. [https://pro.arcgis.com/en/pro-app/latest/tool-reference/geoai/how-lightgbm-works.htm](https://pro.arcgis.com/en/pro-app/latest/tool-reference/geoai/how-lightgbm-works.htm)<a name="footnote-5"></a>
+6. [https://xgboost.readthedocs.io/en/stable/tutorials/model.html](https://xgboost.readthedocs.io/en/stable/tutorials/model.html)<a name="footnote-6"></a>
+7. [https://pro.arcgis.com/en/pro-app/latest/tool-reference/geoai/how-catboost-works.htm](https://pro.arcgis.com/en/pro-app/latest/tool-reference/geoai/how-catboost-works.htm)<a name="footnote-7"></a>
+8. [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0262895](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0262895)<a name="footnote-8"></a>
+9. [https://towardsdatascience.com/hyperopt-demystified-3e14006eb6fa](https://towardsdatascience.com/hyperopt-demystified-3e14006eb6fa)<a name="footnote-9"></a>
+10. [https://hyperopt.github.io/hyperopt/](https://hyperopt.github.io/hyperopt/)<a name="footnote-10"></a>
+11. [https://xgboost.readthedocs.io/en/latest/parameter.html](https://xgboost.readthedocs.io/en/latest/parameter.html)<a name="footnote-11"></a>
+12. [https://lightgbm.readthedocs.io/en/latest/Parameters.html](https://lightgbm.readthedocs.io/en/latest/Parameters.html)<a name="footnote-12"></a>
+13. [https://catboost.ai/en/docs/concepts/python-reference_catboostclassifier](https://catboost.ai/en/docs/concepts/python-reference_catboostclassifier)<a name="footnote-13"></a>
