@@ -138,26 +138,8 @@ All peptide mass spectrometry data is signified by the protein UniProt labeled c
 ![](/img/posts/UPDRS1_Histogram_dark2.png)
 ![](/img/posts/UPDRS2_Histogram_dark2.png)
 ![](/img/posts/UPDRS3_Histogram_dark2.png)
+
 ![](/img/posts/UPDRS4_Histogram_dark2.png)
-
-
-
-
-<div style="text-align:center;">
-<img src="/img/posts/UPDRS1_Histogram_dark.png" alt="image" width="50%" height="auto">
-</div>
-
-<div style="text-align:center;">
-<img src="/img/posts/UPDRS2_Histogram_dark.png" alt="image" width="50%" height="auto">
-</div>
-
-<div style="text-align:center;">
-<img src="/img/posts/UPDRS3_Histogram_dark.png" alt="image" width="50%" height="auto">
-</div>
-
-<div style="text-align:center;">
-<img src="/img/posts/UPDRS4_Histogram_dark.png" alt="image" width="50%" height="auto">
-</div>
 
 <br>
 <br>
@@ -170,7 +152,7 @@ ___
 
 Looking at the missing values for each UPDRS, roughly 45% of the values are missing for UPDRS 4 which concludes me to remove this target from the prediction. It is primarily 0's and has almost half of the values missing, thus it will not be a good target to learn from and predict.
 
-<img src="/img/posts/UPDRS_Missing_Values_dark.png" alt="image" width="50%" height="auto">
+<img src="/img/posts/UPDRS_Missing_Values_dark.png" alt="image" width="25%" height="auto">
 
 
 ### Convert the Target from a Continuous Value to a Catgorical Value
@@ -199,11 +181,10 @@ Rather than use a continous value as the target, binning the values into differe
 
 After converting the targets into categories, there is significant class imbalance of the targets. The category "severe" is barely represented and will not perform well in a ML model. In order to adjust for this issue, **moderate and severe will be combined into a single category**. This will mean the model will now be determining whether a user will have mild vs non-mild symptoms (moderate/severe).
 
-<img src="/img/posts/UPDRS1_Cat_Bars_dark.png" alt="image" width="50%" height="auto">
 
-<img src="/img/posts/UPDRS2_Cat_Bars_dark.png" alt="image" width="50%" height="auto">
-
-<img src="/img/posts/UPDRS3_Cat_Bars_dark.png" alt="image" width="50%" height="auto">
+![](/img/posts/UPDRS1_Cat_Bars_dark2.png)
+![](/img/posts/UPDRS2_Cat_Bars_dark2.png)
+![](/img/posts/UPDRS3_Cat_Bars_dark2.png)
 
 <br>
 <br>
