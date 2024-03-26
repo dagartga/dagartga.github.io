@@ -136,10 +136,10 @@ All peptide mass spectrometry data is signified by the protein UniProt labeled c
 
 <div class="row">
   <div class="column">
-    <img src="/img/posts/UPDRS1_Histogram_dark.png" alt="image" style="width:100%">
+    <img src="/img/posts/UPDRS1_Histogram_dark.png" alt="image" style="width:50%">
   </div>
   <div class="column">
-    <img src="/img/posts/UPDRS2_Histogram_dark.png" alt="image" style="width:100%"
+    <img src="/img/posts/UPDRS2_Histogram_dark.png" alt="image" style="width:50%">
   </div>
 </div>
 
