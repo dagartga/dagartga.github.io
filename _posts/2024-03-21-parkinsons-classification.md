@@ -7,19 +7,42 @@ tags: [XGBoost, SMOTE, Classification, Python]
 
 In this project we use three boosted classification models and Synthetic Minority Oversampling Technique (SMOTE) for predicting the maximum severity of the Parkinsons disease in patients. 
 
-# Comparison of Boosting Models on Parkinsons Prediction
+# Table of contents
 
-## Context:
+- [00. Project Overview](#overview-main)
+    - [Context](#overview-context)
+    - [Actions](#overview-actions)
+    - [Results](#overview-results)
+    - [Growth/Next Steps](#overview-growth)
+- [01. Data Overview](#data-overview)
+- [02. Data Preparation](#data-preparation)
+- [03. Feature Engineering](#feature-engineering)
+- [04. Apply Boosted Models](#boosted-models)
+    - [Default Model](#default-model)
+    - [Hyperparameter Tuning](#hyperparam-tuning)
+    - [12 Months of Protein and Peptide Data](#twelve-months)
+    - [SMOTE](#smote)
+    - [Fine Tune Threshold](#tuned-threshold)
+    - [Add Medication Data](#on-medication)
+- [05. Interpreting The Results](#interpret-results)
+- [06. Growth & Next Steps](#growth-next-steps)
+
+___
+
+# Project Overview  <a name="overview-main"></a>
+
+## Context: <a name="overview-context"></a>
 
 Parkinson's disease (PD) is a disabling brain disorder that affects movements, cognition, sleep, and other normal functions. Unfortunately, there is no current cure—and the disease worsens over time. It's estimated that by 2037, 1.6 million people in the U.S. will have Parkinson's disease, at an economic cost approaching $80 billion. Research indicates that protein or peptide abnormalities play a key role in the onset and worsening of this disease [1].
-
-## Overview:
 
 Three tree based ensemble models are compared for predicting the categorical UPDRS rating of Parkinsons symptoms. The models compared are XGBoost, LightGBM, and CatBoost. Additionally, the data is filtered to the first 12 months of visits for improved performance and a few engineered features are added. The target shows a significant imbalance in classes and so SMOTE (Synthetic Minority Oversampling Technique) is used to balance the target for training. Model hyperparameter tuning is performed using the hyperopt package which uses Bayesian optimization for exploring the search space of hyperparameters. Lastly, the information of whether the patient was on medication during the clinical visit is compared for model performance. The medication information has many missing values but shows predictive improvement in UPDRS 1 and UPDRS 3. AUC-ROC is used as the main comparison metric between models. The categorical threshold for the probability classification is fine-tuned to optimize in favor of Recall while also looking at the highest F1 score. Recall is favored over Precision to minimize False Negatives, which could cause patients to not seek treatment sooner. While False Positives have a negative impact on a patient, because they will likely have more frequent doctors visits, it is not as negatively impactful as a "likely" Parkinson's patient misdiagnosed as being "not at risk."
 
 The default model parameters with no SMOTE and no medication data gave AUC-ROC around 0.59. The best performance for UPDRS 1 is AUC-ROC of 0.796 from a CatBoost Classifier using the Hyperopt hyperparameters and the data with SMOTE applied. The best performance for UPDRS 2 is AUC-ROC of 0.881 from a CatBoost Classifier using the Hyperopt hyperparameters, with the data medication data, and with SMOTE applied. The best performance for UPDRS 3 is AUC-ROC of 0.729 from a LightGBM Classifier using the Hyperopt hyperparameters, with the data medication data, and with SMOTE applied.
 
-## Summary of Best Performance Models
+<br>
+<br>
+
+## Results  <a name="overview-results"></a>
 
 ### UPDRS 1 Prediction on Test Data
 
@@ -36,7 +59,17 @@ The default model parameters with no SMOTE and no medication data gave AUC-ROC a
 - LGBoost Hyperopt SMOTE Medication model:
 - **AUC: 0.729**
 
-## Data:
+<br>
+<br>
+
+## Growth/Next Steps <a name="overview-growth"></a>
+
+<br>
+<br>
+
+___
+
+# Data Overview: <a name="data-overview"></a>
 
 All of the data are from a Kaggle competition that began on February 16, 2023 and ended on May 18, 2023. The core of the dataset consists of protein abundance values derived from mass spectrometry readings of cerebrospinal fluid (CSF) samples gathered from several hundred patients [2]. As well, there is a column indicating whether the patient was taking any medication during the UPDRS assessment. This can affect motor function scores and is represented in the column "upd23b_clinical_state_on_medication."
 
@@ -80,18 +113,23 @@ All peptide mass spectrometry data is signified by the protein UniProt labeled c
 
 <img src="/img/posts/UPDRS4_Histogram_dark.png" alt="image" width="50%" height="auto">
 
+<br>
+<br>
 
-For each UPDRS there are many more for the value 0, and this is extremely the case for UPDRS 4.
+___
 
-<img src="/img/posts/UPDRS_Missing_Values_dark.png" alt="image" width="50%" height="auto">
+# Data Preparation: <a name="data-preparation"></a>
 
 ### Remove UPDRS 4 from the Experiment
 
 Looking at the missing values for each UPDRS, roughly 45% of the values are missing for UPDRS 4 which concludes me to remove this target from the prediction. It is primarily 0's and has almost half of the values missing, thus it will not be a good target to learn from and predict.
 
-### Convert the Target from a Regression value to a Catgorical value
+<img src="/img/posts/UPDRS_Missing_Values_dark.png" alt="image" width="50%" height="auto">
 
-Use the range of values for severity given from Wikipedia [3]
+
+### Convert the Target from a Continuous Value to a Catgorical Value
+
+Rather than use a continous value as the target, binning the values into different categories of severity provides a better signal of eventual outcome. Use the range of values for severity given from Wikipedia [3]
 
 | **UPDRS 1** | **Min** | **Max** |
 | --- | --- | --- |
@@ -121,7 +159,12 @@ After converting the targets into categories, there is significant class imbalan
 
 <img src="/img/posts/UPDRS3_Cat_Bars_dark.png" alt="image" width="50%" height="auto">
 
-## Feature Engineering
+<br>
+<br>
+
+___
+
+# Feature Engineering <a name="feature-engineering"></a>
 
 #### Number of Visits:
 
@@ -141,12 +184,15 @@ After converting the targets into categories, there is significant class imbalan
 
 #### Protein X Protein
 - Combinations of protein values multiplied by each other was implemented on the data. Because this grew the number of features exponentially, it meant the training time for the model was far too long for any benefit. The correlation values of the protein x protein columns to the UPDRS values were not showing that there was a benefit to using the engineered feature. As well, the data explodes to 51,302 protein x protein combinations.
+<br>
+<br>
 
-## Boosting Models
+___
+
+# Apply Boosted Models <a name="boosted-models"></a>
 
 With the high number of features (proteins and peptides) and low correlation of the features to the target, a decision tree based model seemed to be a good option. Decision tree based models do not require feature selection preprocessing. Using a Random Forest with boosting typically provides the best performance. The Random Forest is an ensemble model of Decision Trees which typically generalizes well when the trees are low depth. The boosting helps the Random Forest learn from the samples that it got wrong in the previous trees.
 
-**Three boosting models were tried for this project.**
 
 ### LightGBM
 
@@ -160,11 +206,13 @@ XGBoost or extreme gradient boosting uses depth wise growth for its trees. It us
 
 A gradient boosting ensemble model that has specific benefits for categorical features. It does not require the user to preprocess the categorical features. The CatBoost model grows the Decision Trees symmetrically, meaning that at every depth level all of the nodes use the same split condition [7]. For splitting, the model uses Minimal Variance Sampling, which is performed at the tree level and optimizes the split scoring accuracy [8].
 
-## Model Performance
+<br>
+<br>
 
-**Objective:** Predict the categorical value of the UPDRS for the current visit.
+___
 
-### Model Default Hyperparameters
+
+## Default Model Performance <a name="default-model"></a>
 
 Using 5 fold Cross Validation and taking the mean results of each the 5 holdout sets for default hyperparameters for each model.
 
@@ -192,6 +240,13 @@ Using 5 fold Cross Validation and taking the mean results of each the 5 holdout 
 | **XGBoost** | 0.590 | 0.854 | 0.750 | 0.193 | 0.307 |
 | **LigthtGBM** | 0.593 | 0.858 | 0.839 | 0.193 | 0.314 |
 | **CatBoost** | 0.557 | 0.847 | 0.834 | 0.119 | 0.208 |
+
+<br>
+<br>
+
+___
+
+# Hyperparameter Tuning <a name="hyperparam-tuning"></a>
 
 ## Hyperparameter Optimization Using Hyperopt
 
@@ -221,9 +276,11 @@ Using 5 fold Cross Validation and taking the mean results of each the 5 holdout 
 | **LigthtGBM**| 0.617 | 0.854 | 0.666 | 0.260 | 0.374 |
 | **CatBoost**| 0.586 | 0.836 | 0.524 | 0.208 | 0.298 |
 
-**Hyperopt Conclusion:** The hyperparameter optimization showed an improvement mainly for XGBoost across each UPDRS.
+### Hyperopt Conclusion:
 
-## Using Only Data from the First 12 Months
+- The hyperparameter optimization showed an improvement mainly for XGBoost across each UPDRS.
+
+# 12 Months of Protein and Peptide Data <a name="twelve-months"></a>
 
 The distribution of visit months is most high in the 0 to 24 range. Perhaps the later visit months are actually only adding noise because the protein changes have already happened and may have a delayed effect on the symptoms.
 
@@ -402,7 +459,13 @@ Hyperopt is a python package for hyperparameter tuning that uses the algorithm T
 | **LigthtGBM**| 0.697 | 0.724 | 0.674 | 0.576 | 0.621 |
 | **CatBoost**| 0.586 | 0.836 | 0.524 | 0.208 | 0.298 |
 
-## Apply SMOTE for Class Imbalance
+<br>
+<br>
+
+___
+
+
+# SMOTE <a name="smote"></a>
 
 By using Synthetic Minority Oversampling on the UPDRS values for the training data, the predictive ability was improved significantly. As well, by fine-tuning the threshold cutoff for the classification, the recall and precision can be optimized.
 
@@ -448,7 +511,13 @@ By using Synthetic Minority Oversampling on the UPDRS values for the training da
 | **LigthtGBM**| 0.725 | 0.727 | 0.770 | 0.648 | 0.704 |
 | **CatBoost**| 0.724 | 0.722 | 0.750 | 0.673 | 0.709 |
 
-## Fine-Tuning the Threshold for Classification Using Test Data
+<br>
+<br>
+
+___
+
+
+# Fine-Tuning the Threshold <a name="tuned-threshold"></a>
 
 By adjusting the classification threshold cutoff for each of the models, the recall and precision can be optimized for the performance needs.
 
@@ -526,9 +595,12 @@ The test data is a stratified holdout fold of the 5 Fold CV labeling which did n
 
 ![](/img/posts/cboost_updrs3_f1_curve_dark.png)
 
----
+<br>
+<br>
 
-## Use Patient Medical Data along with Hyperopt Params and SMOTE
+___
+
+# Use Patient Medical Data along with Hyperopt Params and SMOTE <a name="on-medication"></a>
 
 There is data on whether the patient was on medication during the clinical visit. This can affect the value of the UPDRS score.
 
