@@ -59,19 +59,17 @@ The default model parameters with no SMOTE and no medication data gave AUC-ROC a
 
 ## Results  <a name="overview-results"></a>
 
-<br>
-
-### UPDRS 1 Prediction on Test Data
+#### UPDRS 1 Prediction on Test Data
 
 - CatBoost Hyperopt SMOTE model:
 - **AUC: 0.796**
 
-### UPDRS 2 Prediction on Test Data
+#### UPDRS 2 Prediction on Test Data
 
 - CatBoost Hyperopt SMOTE Medication model:
 - **AUC: 0.881**
 
-### UPDRS 3 Prediction on Test Data
+#### UPDRS 3 Prediction on Test Data
 
 - LGBoost Hyperopt SMOTE Medication model:
 - **AUC: 0.729**
@@ -389,6 +387,8 @@ The UPDRS 3 AUC score for Max Depth the value of max_depth = 4 will be used even
 
 
 <br>
+<br>
+
 ___
 
 ### UPDRS 1 - Subsample Validation Curve
