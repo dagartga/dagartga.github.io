@@ -42,6 +42,23 @@ The default model parameters with no SMOTE and no medication data gave AUC-ROC a
 <br>
 <br>
 
+## Actions  <a name="overview-actions"></a>
+
+1. Perform EDA on the data.
+2. Drop the target UPDRS 4 due to high percentage of missing values.
+3. Add feature engineering to create aggregate features.
+3. Evaluate default model prediction performance.
+4. Tune hyperparameters.
+5. Narrow data to only 12 months of visits.
+6. Tune hyperparameters with narrow data.
+7. Apply SMOTE for class imbalance.
+8. Add "On Medication" data.
+9. Tune the classification threshold.
+10. Save best model for each UPDRS.
+
+<br>
+<br>
+
 ## Results  <a name="overview-results"></a>
 
 ### UPDRS 1 Prediction on Test Data
