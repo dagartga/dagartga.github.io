@@ -114,11 +114,11 @@ All peptide mass spectrometry data is signified by the protein UniProt labeled c
 
 ### Data Statistics:
 
-**248 Patients**
+- **248 Patients**
 
-**968 Unique Peptides**
+- **968 Unique Peptides**
 
-**227 Unique Proteins**
+- **227 Unique Proteins**
 
 <br>
 
@@ -193,6 +193,8 @@ ___
 
 # Feature Engineering <a name="feature-engineering"></a>
 
+<br>
+
 #### Number of Visits:
 
 - Since a patient who is experiencing more symptoms may be visiting the doctor more frequently, the number of visits was added as a feature.
@@ -221,6 +223,7 @@ ___
 
 With the high number of features (proteins and peptides) and low correlation of the features to the target, a decision tree based model seemed to be a good option. Decision tree based models do not require feature selection preprocessing. Using a Random Forest with boosting typically provides the best performance. The Random Forest is an ensemble model of Decision Trees which typically generalizes well when the trees are low depth. The boosting helps the Random Forest learn from the samples that it got wrong in the previous trees.
 
+<br>
 
 ### LightGBM
 
@@ -319,7 +322,6 @@ Using 5 fold Cross Validation and taking the mean results of each the 5 holdout 
 The hyperparameter optimization showed an improvement mainly for XGBoost across each UPDRS.
 
 <br>
-<br>
 
 ___
 
@@ -336,24 +338,14 @@ The distribution of visit months is most high in the 0 to 24 range. Perhaps the 
 
 ### UPDRS Categorical Max Values in the First 12 Months
 
-<br>
-
-- For **UPDRS 1**, **84.84%** of patients hit their max category in the first twelve months
-= For **UPDRS 2**, **86.48%** of patients hit their max category in the first twelve months
-- For **UPDRS 3**, **82.38%** of patients hit their max category in the first twelve months
-
-This shows that the first 12 months may give more valuable data in terms of the categorical target.
-
-<br>
-<br>
-
-**Approximately 50% of the patients who get Parkinson's diagnosis get it within the first 12 months of visits.**
 
 **UPDRS 1:** 58.9% of the patients with max diagnosis of Parkinson's get it in 12 months
 
 **UPDRS 2:** 50% of the patients with max diagnosis of Parkinson's get it in 12 months
 
 **UPDRS 3:** 47% of the patients with max diagnosis of Parkinson's get it in 12 months
+
+Approximately 50% of the patients who get Parkinson's diagnosis get it within the first 12 months of visits. This shows that the **first 12 months may give more valuable data** in terms of the categorical target.
 
 <br>
 <br>
