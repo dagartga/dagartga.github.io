@@ -1,7 +1,7 @@
 ---
 layout: post
 title: UK Bank Customer Report
-image: "/posts/tableau-map-image.png"
+image: "/posts/uk-bank-design.png"
 
 tags: [Tableau, Marketing, Data Visualization]
 ---
