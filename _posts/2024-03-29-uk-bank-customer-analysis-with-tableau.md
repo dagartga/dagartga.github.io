@@ -8,7 +8,7 @@ tags: [Tableau, Marketing, Data Visualization]
 
 I have been tasked with generating insights into the customer demographics for a UK Bank. They have customers in England, Scotland, Wales, and Northern Ireland. To create better marketing content, they asked me to create some customer segmentation.
 
-<iframe seamless frameborder="0" src="https://public.tableau.com/views/UKBankAnalysis_17107761108470/Story1?:embed=yes&:display_count=yes&:showVizHome=no" width = '1090' height = '900'></iframe>
+<iframe seamless frameborder="0" src="https://public.tableau.com/views/UKBankAnalysis_17107761108470/Story1?:embed=yes&:display_count=yes&:showVizHome=no" width = '1090' height = '1200'></iframe>
 
 ---
 
