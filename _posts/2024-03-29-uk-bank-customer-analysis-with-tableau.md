@@ -14,13 +14,7 @@ I have been tasked with generating insights into the customer demographics for a
 
 ### Situation:
 
-**Create a dashboard to analyze a 30 day sample of data from an Earthquake monitoring agency. The dashboard needs to have the following features according to stakeholders:**
-
-* A map showing where Earthquakes took place, it must show their intensity in terms of magnitude.
-* Have a list of the top 10 largest earthquakes in terms of magnitude for easily isolation.
-* Have a breakdown of the percentage of earthquakes that occurred in each broad location.
-* Then have a look at the each of the countries within each broad location. This should show how many earthquakes took place, what the average magnitude was, and what the maximum magnitude was.
-* Finally, all visuals need to be controlled by a single date filter to observe the each of the visuals on a day by day basis.
+**The bank wants to generate a marketing campaign to promote a new financial product they are releasing. The marketing team wants to have customer analytics to create targeted marketing campaigns based on different regions.**
 
 ---
 
@@ -30,27 +24,41 @@ I need to develop a Tableau dashboard to visualize bank customers by geographica
 ---
 ### Action:
 
-1. **Geographical Region:** Create a table to view the 10 largest earthquakes on a specific date or all-time for this 30-day sample.
-2. **Age Distribution:** Create world map to see the frequency of earthquake for a region as well as their magnitude.
-3. **Bank Balance Distribution:** Observe the percentage of earthquakes categorized broadly - North America, South America, Central America, Asia, Oceania, Europe, the Middle East, and Africa.
-4. **Gender:** Analyze the frequency of earthquakes within for the countries within each of the broad locations above, providing insights into regions prone to seismic activity.
-
----
-### Result
-The created dashboard allows users to:
-1. Identify quick insights into earthquakes for a 30 day sample on a given day or for the duration of that 30 days.
-2. Have a quick look at seismic activity across the globe by zoning in on areas with high frequency and differentiate by magnitude with efficient use of color.
-3. Have access to a country level analysis for frequency, average magnitude, or maximum magnitude.
+1. **Geographical Region:** Show a map of the United Kingdom segmented by the four regions with the number of customers in each region.
+2. **Age Distribution:** View the percentage of customers in different age brackets.
+3. **Average Bank Balance Distribution:** View the percentage of customers based on their average balance for the past year.
+4. **Gender:** View the percentage of customers based on their gender.
+5. **Working Class Status:** View the percentage of customers based on their self-selected class of work, such as blue collar, white collar, or other.
 
 ---
 
-### Example Analysis:
+### Analysis:
 
-##### What are the most earthquake-prone regions during this time period and on July 25th, 2022.
-* All time: North America has the highest percentage of Earthquakes in this dataset at 53% followed by Central America at 20%.
-* July 25th, 2022: North America's share of global earthquakes increased to 55%. On this day, Central America and Asia are very close with shares of 12% and 11% respectively.
+#### General Customers
+- Age Group is mainly represented by age 30-40
+- Gender is split fairly evenly (54:46) male:female
+- Almost 50% of customers are white collar
+- The distribution of balances is skewed with the largest % of customers with a low balance of 0-15K and it slopes downward continually
 
----
+#### England
+- The population is more than 50% of the customers and has the largest influence on the distribution of customers
+- There is a large percentage of White Collar workers from England
+- There is an almost 50:50 split between male and female
+- Age range is predominantly 30-40 years old
+- **Takeaway:** Focus on men and women who are white collar in their 30s for marketing
 
-### If given more time I would:
-* Explore magnitude trends over time. At what point in this sample were magnitudes at their peak. This could help alert safety authorities to have high awareness during a certain period of the year.
+#### Scotland
+- The population is the second largest customer group with almost 25% of the customers
+- But has a much different distribution of ages 45-55 years old
+- And 72% Male and is 48% blue collar and 44% other
+- **Takeaway:** Focus marketing on Blue Collar Men who are middle aged.
+
+#### Wales
+- Similar to England but with a larger balance that is the primary distribution, 15-30K has a largest distribution
+- **Takeaway:** Focus marketing on White Collar men and women who may have more money than other regions
+
+#### Northern Ireland
+- 74% of customers are female
+- 50% of customers are Other for their employment class
+- **Takeaway:** Focus marketing on women who are not traditional working class
+
