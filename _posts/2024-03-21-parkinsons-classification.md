@@ -14,6 +14,7 @@ In this project we use three boosted classification models and Synthetic Minorit
     - [Actions](#overview-actions)
     - [Results](#overview-results)
     - [Growth/Next Steps](#overview-growth)
+    - [Web Application](#webapp)
 - [01. Data Overview](#data-overview)
 - [02. Data Preparation](#data-preparation)
 - [03. Feature Engineering](#feature-engineering)
@@ -92,6 +93,14 @@ The default model parameters with no SMOTE and no medication data gave AUC-ROC a
 While these models perform quite well, next steps would be to try to use bigger compute power to generate and train models using the combination of protein values and peptide values. Unfortunately, on our local machine this number becomes massive and is not reasonable for training times.
 
 Another idea is to using domain knowledge to specifically find proteins that are known to interact and generate new features from that subset. This would require an expert in Parkinsons biochemistry to know which proteins and peptides are of interest. Because there are 227 unique proteins and 968 unique peptides, the amount of research into each protein and peptide would not be doable by a hobbyist.
+
+<br>
+
+## Web Application <a name="webapp"></a>
+
+[Parkinson's Web Application Link](https://boosted-models-for-parkinsons-prediction.streamlit.app/)
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://jumpshare.com/embed/06HHnDZZ9EnTAR2d0J0I" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 <br>
 <br>
