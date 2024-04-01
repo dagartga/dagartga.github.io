@@ -63,7 +63,7 @@ It would be interesting to track this uplift over time and see if:
 
 * It continues to grow
 * It flattens or returns to normal
-* We see any form of uplift pull-forward
+* See any form of uplift pull-forward
 
 It would also be interesting to analyse what it is that is making up this uplift.  Are customers increasing their spend across the same categories - or are they buying into new categories?
 
@@ -85,11 +85,11 @@ Whatever the scenario, the task is *essentially* the same - to understand how bi
 
 But to understand this *robustly & reliably* it is essential to understand what *would have happened* had the event not taken place.
 
-In most cases the trends *preceding the event in question* isn’t tame, it is filled with lumps and bumps and ups and downs.  When some key event does take place, understanding what *would have happened had the event not taken place* so we can estimate the true impact can be difficult!
+In most cases the trends *preceding the event in question* aren't tame, there are filled with lumps and bumps and ups and downs.  When some key event does take place, understanding what *would have happened had the event not taken place* can be difficult!
 
-In many cases, the event that we’re analyzing is part of a randomized & controlled experiment, and this means understanding the difference between the group that was affected by the event can be compared to a control group, that was purposely held back from the effect of the event.
+In many cases, the event being analyzed is part of a randomized & controlled experiment, and this means understanding the difference between the group that was affected by the event can be compared to a control group, that was purposely held back from the effect of the event.
 
-But there are a lot of cases where we just can’t run a randomized experiment, either because it’s expensive, or potentially it’s just impossible.  As an example, in the case of measuring the change in a share price after an event, we don’t really have a direct control group to lean on for comparison purposes.
+But there are a lot of cases where a randomized experiment can't be run, either because it’s expensive, or potentially it’s just impossible.  As an example, in the case of measuring the change in a share price after an event, there is no direct control group to lean on for comparison purposes.
 
 An approach that works really well in both scenarios, is Causal Impact Analysis.
 
@@ -100,13 +100,13 @@ Causal Impact is a time-series technique, originally developed by Google.
 
 It estimates what *would have happened* (known as a "counterfactual") by applying a model to *comparable data* in a pre-period and projecting this model onto that data in a post-period. The difference between the actual data and the counterfactual in the post-period, is the estimated impact of the event.
 
-The *comparable data* that we pass in can be a control group, another set of related data, or even multiple sets of related data - but for this approach to work robustly & reliably, this additional data must must adhere to several rules:
+The *comparable data* that I pass in can be a control group, another set of related data, or even multiple sets of related data - but for this approach to work robustly & reliably, this additional data must must adhere to several rules:
 
-It must not be affected by the event that we’re measuring, but it must be predictive of our output, or have some relationship with our initial time-series data.
+It must not be affected by the event that I am measuring, but it must be predictive of our output, or have some relationship with our initial time-series data.
 
-So, in the case of randomized experiment, we could use the control group as our additional set of data.
+So, in the case of randomized experiment, I could use the control group as our additional set of data.
 
-In the case where this is no control group, other sets of data that meet the aforementoined rules must be found. These must not be affected by the event, but they should have some relationship or correlation with the time-series data we’re measuring.  An example is measuring stock prices, perhaps other stocks that are in a similar industry.  Or if measuring the sales of a certain section of the grocery store, say health and beauty products, perhaps the second time-series could be the sales of another non-food category in the store.
+In the case where this is no control group, other sets of data that meet the aforementoined rules must be found. These must not be affected by the event, but they should have some relationship or correlation with the time-series data being meassured.  An example is measuring stock prices, perhaps other stocks that are in a similar industry.  Or if measuring the sales of a certain section of the grocery store, say health and beauty products, perhaps the second time-series could be the sales of another non-food category in the store.
 
 Either way, this additional data provides the algorithm insights into the trends of the data over time.
 
@@ -131,7 +131,7 @@ Since Delivery Club membership was open to *all customers* - the control group i
 
 In the code below, I:
 
-* Load in the Python libraries we require
+* Load in the Python libraries required
 * Import the required data from the *transactions* and *campaign_data* tables (3 months prior, 3 months post campaign)
 * Aggregate the transactions table from customer/transaction/product area level to customer/date level
 * Merge on the signup flag from the *campaign_data* table
@@ -240,14 +240,14 @@ The vertical dotted line down the middle of each plot is the date that the Deliv
 <br>
 **Chart 1:  Actual vs. Counterfactual**
 
-The top chart shows the actual data for the impacted group as a black line, in other words the *actual* average daily sales for customers who did go on to sign up to the Delivery Club.  You can also see the counterfactual, which is shown with the blue dotted line.  The purple area around the blue dotted line represents the confidence intervals around the counterfactual - in other words, the range in which the algorithm believes the prediction should fall in.  A wider confidence interval suggests that the model is less sure about it's counterfactual prediction - and this is all taken into account when we look to quantify the actual uplift.
+The top chart shows the actual data for the impacted group as a black line, in other words the *actual* average daily sales for customers who did go on to sign up to the Delivery Club.  You can also see the counterfactual, which is shown with the blue dotted line.  The purple area around the blue dotted line represents the confidence intervals around the counterfactual - in other words, the range in which the algorithm believes the prediction should fall in.  A wider confidence interval suggests that the model is less sure about it's counterfactual prediction - and this is all taken into account when looking to quantify the actual uplift.
 
-Just eyeing this first chart, it does indeed look like there is some increase in daily average spend for customers who joined the club, over-and-above what the model suggests they would have done, if the club was never in existence.  We will look at the actual numbers for this very soon.
+Just eyeing this first chart, it does indeed look like there is some increase in daily average spend for customers who joined the club, over-and-above what the model suggests they would have done, if the club was never in existence.  THe actual numbers for this will be viewed very soon.
 
 <br>
 **Chart 2:  Pointwise Effects**
 
-This second chart shows that for each day (or data point in general) in the time-series, the *raw differences* between the actual values and the values for the counterfactual.  It is plotting the *differences* from Chart 1.  As an example, if on Day 1 the actual and the counterfactual were the same, this chart would show a value of 0.  If the actual is higher than the counterfactual then we would see a positive value on this chart, and vice versa.  It is essentially showing how far above or below the counterfactual, the actual values are.
+This second chart shows that for each day (or data point in general) in the time-series, the *raw differences* between the actual values and the values for the counterfactual.  It is plotting the *differences* from Chart 1.  As an example, if on Day 1 the actual and the counterfactual were the same, this chart would show a value of 0.  If the actual is higher than the counterfactual then a positive value would be seen on this chart, and vice versa.  It is essentially showing how far above or below the counterfactual, the actual values are.
 
 What is interesting here is that for the pre-period there is a difference surrounding zero, but in the post period there is mostly positive values mirroring what was seen in Chart 1 where the actual average spend was greater than the counterfactual.
 
@@ -287,15 +287,15 @@ Posterior prob. of a causal effect: 100.0%
 <br>
 At the top of the results summary above, in the post-period, the average actual daily sales per customer over the post-period was $171, **higher than that of the counterfactual**, which was $121.  This counterfactual prediction had 95% confidence intervals of $113 and $130.
 
-Below that we can see the *absolute effect* which is the difference between actual and counterfactual (so the difference between $171 and $121) - and this figure is essentially showing us the average daily *uplift* in sales over the post-period.  There is also the confidence intervals surrounding that effect, and since these do not pass through zero, I can confidently say that there *was* an uplift driven by the Delivery Club.
+Below that is the *absolute effect*, which is the difference between actual and counterfactual (so the difference between $171 and $121) - and this figure is essentially showing us the average daily *uplift* in sales over the post-period.  There is also the confidence intervals surrounding that effect, and since these do not pass through zero, I can confidently say that there *was* an uplift driven by the Delivery Club.
 
 Below that, there are these same numbers as percentages.
 
 In the columns on the right of the summary, there are the *cumulative* values for these across the entire post-period, rather than the average per day.
 
-What is amazing about the *pycausalimpact* library is that, with an extra parameter, all of this information will be provided as a written output.
+What is amazing about the *pycausalimpact* library is that, with an extra parameter, all of this information will be provided as a written output. 
 
-If we put:
+Using the following code:
 
 ```python
 
@@ -324,7 +324,7 @@ significant.
 <br>
 So, this is the same information as seen earlier, but put into a written report which can go straight to the client.
 
-The high level story of this that, yes, there is an uplift in sales for those customers that joined the Delivery Club, over and above what we believe they would have spent had the club not been in existence.  This uplift was deemed to be significantly significant (@ 95%)
+The high level story of this that, yes, there is an uplift in sales for those customers that joined the Delivery Club, over and above what is believed they would have spent had the club not been in existence.  This uplift was deemed to be significantly significant (@ 95%)
 
 ___
 <br>
@@ -336,6 +336,6 @@ It would be interesting to track this uplift over time and see if:
 
 * It continues to grow
 * It flattens or returns to normal
-* We see any form of uplift pull-forward
+* See any form of uplift pull-forward
 
 It would also be interesting to analyse what it is that is making up this uplift.  Are customers increasing their spend across the same categories - or are they buying into new categories?
