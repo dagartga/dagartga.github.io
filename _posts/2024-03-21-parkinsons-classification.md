@@ -103,8 +103,7 @@ Another idea is to using domain knowledge to specifically find proteins that are
 <br>
 
 
-### The web application can be viewed here:
-[Parkinson's Web Application Link](https://boosted-models-for-parkinsons-prediction.streamlit.app/)
+### The web application can be viewed here: [Parkinson's Web Application Link](https://boosted-models-for-parkinsons-prediction.streamlit.app/)
 
 <br>
 <br>
