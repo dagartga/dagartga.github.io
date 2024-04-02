@@ -100,7 +100,7 @@ Another idea is to using domain knowledge to specifically find proteins that are
 
 <div>
     <a href="https://www.loom.com/share/2011786046814195a2c63fdee8a27cb4">
-      <p>Streamlit - 1 April 2024 - Watch Video</p>
+      <p>Parkinsons Prediction Web App</p>
     </a>
     <a href="https://www.loom.com/share/2011786046814195a2c63fdee8a27cb4">
       <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/2011786046814195a2c63fdee8a27cb4-with-play.gif">
