@@ -5,7 +5,7 @@ image: "/posts/association-rules-title-img.png"
 tags: [Association Rule Learning, Python]
 ---
 
-In this project, I use Association Rule Learning to analyse the transactional relationships & dependencies between products in the alcohol section of a grocery store.
+In this project, I use Association Rule Learning to analyze the transactional relationships and dependencies between products in the alcohol section of a grocery store.
 
 # Table of contents
 
@@ -35,7 +35,7 @@ They have provided us a sample of 3,500 alcohol transactions - our task is fairl
 <br>
 ### Actions <a name="overview-actions"></a>
 
-Based upon the tasks at hand - we apply Association Rule Learning, specifically *Apriori* to examine & analyse the strength of relationship between different products within the transactional data.
+Based upon the tasks at hand - we apply Association Rule Learning, specifically *Apriori* to examine and analyze the strength of relationship between different products within the transactional data.
 
 We firstly installed the apyori package, which contains all of the required functionality for this task.
 
@@ -63,15 +63,15 @@ Another interesting association is between products labelled "small".  At this p
 
 We propose to also build a "search engine" for category managers where they can look-up products by keyword in the product association table.
 
-As an example - we search for any products that associate strongly with "New Zealand" products. There appeared to be *some* relationship between New Zealand wines and other New Zealand wines, but what was also interesting was that New Zealand wines seemed to be more associated with French & South American wines than they were with Australian Wines.
+As an example - we search for any products that associate strongly with "New Zealand" products. There appeared to be *some* relationship between New Zealand wines and other New Zealand wines, but what was also interesting was that New Zealand wines seemed to be more associated with French and South American wines than they were with Australian Wines.
 
-New Zealand & Australia are often grouped together, but in terms of wine this wouldn't make sense - perhaps because of the difference climates the wines are very different and thus it wouldn't make sense to group wines by geographical proximity, but by preference instead.  This is only a hypothesis for now - we will need to take this back to the client and get their category experts to help us interpret it!
+New Zealand and Australia are often grouped together, but in terms of wine this wouldn't make sense, perhaps because of the difference climates the wines are very different and thus it wouldn't make sense to group wines by geographical proximity, but by preference instead.  This is only a hypothesis for now - we will need to take this back to the client and get their category experts to help us interpret it!
 
 <br>
 <br>
 ### Growth/Next Steps <a name="overview-growth"></a>
 
-As this is first & foremost an exploratory project, we will take back the results to the client Category Managers & discuss the results, our views on how these insights can be actioned best, and any considerations that need to be taken into account when interpreting.
+As this is first and foremost an exploratory project, we will take back the results to the client Category Managers and discuss the results, our views on how these insights can be actioned best, and any considerations that need to be taken into account when interpreting.
 
 From there we will recommend applying this same logic to all other categories, as well as potentially across the full-product range.
 
@@ -182,12 +182,12 @@ Lift is the factor by which the Confidence, exceeds the Expected Confidence.  In
 
 We calculate Lift by dividing Confidence by Expected Confidence.
 
-A Lift score *greater than 1* indicates that items A & B appear together *more often* than expected, and conversely a Lift score *less then 1* indicates that items A & B appear together *less often* than expected.
+A Lift score *greater than 1* indicates that items A and B appear together *more often* than expected, and conversely a Lift score *less then 1* indicates that items A and B appear together *less often* than expected.
 
 <br>
 ##### In Practice
 
-While above we're just discussing two products (Item A & Item B) - in reality this score would be calculated between *all* pairs of products, and we could then sort these by Lift score (for example) and see exactly what the strongest or weakest relationships were - and this information would guide our decisions regarding product layout, recommendations for customers, or promotions.
+While above we're just discussing two products (Item A and Item B) - in reality this score would be calculated between *all* pairs of products, and we could then sort these by Lift score (for example) and see exactly what the strongest or weakest relationships were - and this information would guide our decisions regarding product layout, recommendations for customers, or promotions.
 
 <br>
 ##### An Important Consideration
@@ -251,7 +251,7 @@ This algorithm allows us to specify the association rules that we want.  We set:
 * A minimum *Support* of 0.003 to eliminate very rare product sets
 * A minimum *Confidence* of 0.2
 * A minimum *Lift* of 3 to ensure we're only focusing on product sets with strong relationships
-* A minimum & maximum length of 2 meaning we're only focusing on product *pairs* rather than larger sets
+* A minimum and maximum length of 2 meaning we're only focusing on product *pairs* rather than larger sets
 
 ```python
 
@@ -273,9 +273,9 @@ RelationRecord(items=frozenset({'America White', 'American Rose'}), support=0.02
 
 ```
 <br>
-The output from the algorithm is in the form of a generator. We covert this to a list as this is easier to manipulate & analyse.  
+The output from the algorithm is in the form of a generator. We covert this to a list as this is easier to manipulate and analyze.  
 
-Based upon the parameters we set when applying the algorithm, we get 132 product pairs.  We print out the first element from the list to see what the output looks like, and while this contains all the key information we need - to make it easier to analyse (and more accessible & useable for stakeholders) - in the next code snippet, we extract the key elements and use list comprehension to re-work this data to exist as a Pandas DataFrame.
+Based upon the parameters we set when applying the algorithm, we get 132 product pairs.  We print out the first element from the list to see what the output looks like, and while this contains all the key information we need - to make it easier to analzse (and more accessible and useable for stakeholders) - in the next code snippet, we extract the key elements and use list comprehension to re-work this data to exist as a Pandas DataFrame.
 
 ```python
 
@@ -392,15 +392,15 @@ The results of this search, in order of descending Lift are as follows:
 | New Zealand Red | Australia White | 0.007289038 | 0.371428571 | 3.215742025 |
 
 <br>
-There appears to be *some* relationship between New Zealand wines and other New Zealand wines, but what is also interesting is that New Zealand wines seem to be more associated with French & South American wines than they are with Australian Wines.
+There appears to be *some* relationship between New Zealand wines and other New Zealand wines, but what is also interesting is that New Zealand wines seem to be more associated with French and South American wines than they are with Australian Wines.
 
-New Zealand & Australia are often grouped together, but in terms of wine this wouldn't make sense - perhaps because of the difference climates the wines are very different and thus it wouldn't make sense to group wines by geographical proximity, but by preference instead.  This is only a hypothesis for now - we will need to take this back to the client and get their category experts to help us interpret it!
+New Zealand and Australia are often grouped together, but in terms of wine this wouldn't make sense - perhaps because of the difference climates the wines are very different and thus it wouldn't make sense to group wines by geographical proximity, but by preference instead.  This is only a hypothesis for now - we will need to take this back to the client and get their category experts to help us interpret it!
 
 ___
 <br>
 # Growth & Next Steps <a name="growth-next-steps"></a>
 
-As this was first & foremost an exploratory project, we will take back the results to the client Category Managers & discuss the results, our views on how these insights can be actioned best, and any considerations that need to be taken into account when interpreting.
+As this was first and foremost an exploratory project, we will take back the results to the client Category Managers and discuss the results, our views on how these insights can be actioned best, and any considerations that need to be taken into account when interpreting.
 
 From there we will recommend applying this same logic to all other categories, as well as potentially across the full-product range.
 
