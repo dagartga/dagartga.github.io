@@ -34,6 +34,7 @@ The aim of this work is to understand and quantify the uplift in sales for custo
 
 <br>
 <br>
+
 ### Actions <a name="overview-actions"></a>
 
 I applied Causal Impact Analysis (see full details below) using the *pycausalimpact* library.
@@ -55,9 +56,10 @@ There is a 41.1% uplift in sales for those customers that joined the Delivery Cl
 
 <br>
 <br>
+
 ### Growth/Next Steps <a name="overview-growth"></a>
 
-It would be interesting to look at this pool of customers (both those who did and did not join the Delivery club) and investigate if there were any differences in sales in these time periods *last year* - this would help in understanding if any of the uplift seen here is actually the result of seasonality.
+It would be interesting to look at this pool of customers (both those who did and did not join the Delivery club) and investigate if there were any differences in sales in these time periods *last year*, this would help to determine if any of the uplift seen here is actually the result of seasonality.
 
 It would be interesting to track this uplift over time and see if:
 
@@ -65,7 +67,7 @@ It would be interesting to track this uplift over time and see if:
 * It flattens or returns to normal
 * See any form of uplift pull-forward
 
-It would also be interesting to analyze what it is that is making up this uplift.  Are customers increasing their spend across the same categories - or are they buying into new categories?
+It would also be interesting to analyze what it is that is making up this uplift.  Are customers increasing their spend across the same categories or are they buying into new categories?
 
 <br>
 <br>
@@ -75,6 +77,7 @@ ___
 # Causal Impact Analysis Overview  <a name="causal-impact-overview"></a>
 
 <br>
+
 #### Context
 
 One of the most common tasks to undertake in Data Science & Data Analysis is *understanding and quantifying a change in a key business metric after some event has taken place*.
@@ -94,6 +97,7 @@ But there are a lot of cases where a randomized experiment can't be run, either 
 An approach that works really well in both scenarios, is Causal Impact Analysis.
 
 <br>
+
 #### How It Works
 
 Causal Impact is a time-series technique, originally developed by Google.
@@ -117,6 +121,7 @@ Once the algorithm has modeled this relationship, it then looks to apply the lea
 Once this counterfactual is fulfilled, the estimation for the causal effect can be calculated, or in other words, the effect caused by the event!
 
 <br>
+
 #### Application
 
 Here I will utilize a Python package called **pycausalimpact** to apply this algorithm to the data.  This will model the relationships, and provide very useful plots and summaries to help understand the results.
@@ -213,9 +218,11 @@ I can use the created object (called ci above) to examine & plot the results.
 
 ___
 <br>
+
 # Analyzing The Results <a name="causal-impact-results"></a>
 
 <br>
+
 #### Plotting The Results
 
 The *pycausalimpact* library makes plotting the results extremely easy - all done with the single line of code below:
@@ -238,6 +245,7 @@ To explain what is in the above image...
 The vertical dotted line down the middle of each plot is the date that the Delivery Club membership started.  Everything to the left of this dotted line is the pre-period, and everything to the right of the dotted line is the post-period.
 
 <br>
+
 **Chart 1:  Actual vs. Counterfactual**
 
 The top chart shows the actual data for the impacted group as a black line, in other words the *actual* average daily sales for customers who did go on to sign up to the Delivery Club.  You can also see the counterfactual, which is shown with the blue dotted line.  The purple area around the blue dotted line represents the confidence intervals around the counterfactual - in other words, the range in which the algorithm believes the prediction should fall in.  A wider confidence interval suggests that the model is less sure about it's counterfactual prediction - and this is all taken into account when looking to quantify the actual uplift.
@@ -245,6 +253,7 @@ The top chart shows the actual data for the impacted group as a black line, in o
 Just eyeing this first chart, it does indeed look like there is some increase in daily average spend for customers who joined the club, over-and-above what the model suggests they would have done, if the club was never in existence.  THe actual numbers for this will be viewed very soon.
 
 <br>
+
 **Chart 2:  Pointwise Effects**
 
 This second chart shows that for each day (or data point in general) in the time-series, the *raw differences* between the actual values and the values for the counterfactual.  It is plotting the *differences* from Chart 1.  As an example, if on Day 1 the actual and the counterfactual were the same, this chart would show a value of 0.  If the actual is higher than the counterfactual then a positive value would be seen on this chart, and vice versa.  It is essentially showing how far above or below the counterfactual, the actual values are.
@@ -252,6 +261,7 @@ This second chart shows that for each day (or data point in general) in the time
 What is interesting here is that for the pre-period there is a difference surrounding zero, but in the post period there is mostly positive values mirroring what was seen in Chart 1 where the actual average spend was greater than the counterfactual.
 
 <br>
+
 **Chart 3:  Cumulative Effects**
 
 The bottom chart shows the cumulative uplift over time.  In other words this chart is effectively adding up the pointwise contributions from the second chart over time.  This is very useful as it helps the viewer get a feel for what the total uplift or difference is at any point in time.
@@ -259,6 +269,7 @@ The bottom chart shows the cumulative uplift over time.  In other words this cha
 As is expected based on the other two charts, there does appear to be a cumulative uplift over time.
 
 <br>
+
 #### Interpreting The Numbers
 
 The *pycausalimpact* library also makes interpreting the numbers very easy.  I get a clean results summary with the following line of code:
@@ -285,6 +296,7 @@ Posterior prob. of a causal effect: 100.0%
 
 ```
 <br>
+
 At the top of the results summary above, in the post-period, the average actual daily sales per customer over the post-period was $171, **higher than that of the counterfactual**, which was $121.  This counterfactual prediction had 95% confidence intervals of $113 and $130.
 
 Below that is the *absolute effect*, which is the difference between actual and counterfactual (so the difference between $171 and $121) - and this figure is essentially showing us the average daily *uplift* in sales over the post-period.  There is also the confidence intervals surrounding that effect, and since these do not pass through zero, I can confidently say that there *was* an uplift driven by the Delivery Club.
@@ -322,15 +334,18 @@ significant.
 
 ```
 <br>
+
 So, this is the same information as seen earlier, but put into a written report which can go straight to the client.
 
 The high level story of this that, yes, there is an uplift in sales for those customers that joined the Delivery Club, over and above what is believed they would have spent had the club not been in existence.  This uplift was deemed to be significantly significant (@ 95%)
 
 ___
+
 <br>
+
 # Growth & Next Steps <a name="growth-next-steps"></a>
 
-It would be interesting to look at this pool of customers (both those who did and did not join the Delivery club) and investigate if there were any differences in sales in these time periods *last year* - this would help to determine if any of the uplift seen here is actually the result of seasonality.
+It would be interesting to look at this pool of customers (both those who did and did not join the Delivery club) and investigate if there were any differences in sales in these time periods *last year*, this would help to determine if any of the uplift seen here is actually the result of seasonality.
 
 It would be interesting to track this uplift over time and see if:
 
@@ -338,4 +353,4 @@ It would be interesting to track this uplift over time and see if:
 * It flattens or returns to normal
 * See any form of uplift pull-forward
 
-It would also be interesting to analyze what it is that is making up this uplift.  Are customers increasing their spend across the same categories - or are they buying into new categories?
+It would also be interesting to analyze what it is that is making up this uplift.  Are customers increasing their spend across the same categories or are they buying into new categories?
