@@ -31,7 +31,7 @@ ___
 
 ### Context <a name="overview-context"></a>
 
-The Senior Management team from the client, a supermarket chain, are disagreeing about how customers are shopping, and how lifestyle choices may affect which food areas customers are shopping in, or more interestingly, not shopping in.
+The Senior Management team from the client, a supermarket chain, is disagreeing about how customers are shopping and how lifestyle choices may affect which food areas customers are shopping in, or more interestingly, not shopping in.
 
 Their proposal is to use data and Machine Learning to help segment up their customers based upon their engagement with each of the major food categories.  This will aid their business understanding of the customer base and enhance the relevancy of targeted messaging and customer communication.
 
@@ -69,7 +69,7 @@ To help embed this segmentation into the business, I have proposed to call this 
 
 It would be interesting to run this clustering/segmentation at a lower level of product areas, so rather than just the four areas of Meat, Dairy, Fruit, Vegetables - clustering spend across the sub-categories *below* those categories.  This would mean creating more specific clusters, and getting an even more granular understanding of dietary preferences within the customer base.
 
-It could also be interesting to include customer metrics such as distance to store, gender etc to give a even more well-rounded customer segmentation.
+It could also be interesting to include customer metrics such as distance to store, gender, etc to give a even more well-rounded customer segmentation.
 
 Lastly, other clustering approaches such as hierarchical clustering or DBSCAN can be used and their results compared.
 <br>
@@ -153,7 +153,7 @@ ___
 <br>
 ### Concept Overview <a name="kmeans-overview"></a>
 
-K-Means is an *unsupervised learning* algorithm, meaning that it does not look to predict known labels or values, but instead looks to isolate patterns within unlabelled data.
+K-Means is an *unsupervised learning* algorithm, meaning that it does not look to predict known labels or values, but instead looks to isolate patterns within unlabeled data.
 
 The algorithm works in a way where it partitions data-points into distinct groups (clusters) based upon their *similarity* to each other.
 
@@ -171,6 +171,7 @@ The algorithm does this by iterating over four key steps, namely:
 Steps 3 & 4 continue to iterate until no data-points are reassigned to a closer centroid.
 
 <br>
+
 ### Data Preprocessing <a name="kmeans-preprocessing"></a>
 
 There are three vital preprocessing steps for k-means, namely:
@@ -180,6 +181,7 @@ There are three vital preprocessing steps for k-means, namely:
 * Feature Scaling
 
 <br>
+
 ##### Missing Values
 
 Missing values can cause issues for k-means, as the algorithm won't know where to plot those data-points along the dimension where the value is not present.  If the supermaket dataset has observations with missing values, the most common options are to either remove the observations, or to use an imputer to fill-in or to estimate what those value might be.
@@ -187,12 +189,14 @@ Missing values can cause issues for k-means, as the algorithm won't know where t
 As the data for each customer is aggregated, there aren't missing values and that issue does not need to be dealt with.
 
 <br>
+
 ##### Outliers
 
 As k-means is a distance based algorithm, outliers can cause major problems.  The main issue is that when the input variables are scaled, a very important step for a distance based algorithm, outliers can cause variables can be "bunched up", making it hard to compare their values with other input variables.
 
 
 <br>
+
 ##### Feature Scaling
 
 Again, as k-means is a distance based algorithm, in other words it is reliant on an understanding of how similar or different data points are across different dimensions in n-dimensional space, the application of Feature Scaling is extremely important.
