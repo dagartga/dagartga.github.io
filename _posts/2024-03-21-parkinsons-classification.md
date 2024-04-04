@@ -102,7 +102,7 @@ Another idea is to using domain knowledge to specifically find proteins that are
 
 <br>
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://jumpshare.com/embed/06HHnDZZ9EnTAR2d0J0I" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+![](/img/posts/parkinsons_app.gif)
 
 <br>
 <br>
