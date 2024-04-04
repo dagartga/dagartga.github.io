@@ -14,6 +14,7 @@ In this project, I use Association Rule Learning to analyze the transactional re
     - [Actions](#overview-actions)
     - [Results](#overview-results)
     - [Growth/Next Steps](#overview-growth)
+    - [Github Repo](#github)
 - [01. Data Overview](#data-overview)
 - [02. Apriori Overview](#apriori-overview)
 - [03. Data Preparation](#apriori-data-prep)
@@ -76,6 +77,13 @@ As this is first and foremost an exploratory project, I will take back the resul
 From there I will recommend applying this same logic to all other categories, as well as potentially across the full-product range.
 
 I will also propose the development of the "Keyword Search Engine" which will help Category Managers extract and utilize the insights held within the data.
+
+<br>
+<br>
+
+### Github Repo <a name="github"></a>
+
+#### View the Github Repo here: [Causal Impact Github Repo](https://github.com/dagartga/data-science-portfolio) 
 
 <br>
 <br>

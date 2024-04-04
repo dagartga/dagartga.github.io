@@ -15,6 +15,7 @@ In this project, I created a web application that uses three boosted classificat
     - [Results](#overview-results)
     - [Growth/Next Steps](#overview-growth)
     - [Web Application](#webapp)
+    - [Github Repo](#github)
 - [01. Data Overview](#data-overview)
 - [02. Data Preparation](#data-preparation)
 - [03. Feature Engineering](#feature-engineering)
@@ -42,6 +43,7 @@ Three tree based ensemble models are compared for predicting the categorical UPD
 The default model parameters with no SMOTE and no medication data gave AUC-ROC around 0.59. The best performance for UPDRS 1 is AUC-ROC of 0.796 from a CatBoost Classifier using the Hyperopt hyperparameters and the data with SMOTE applied. The best performance for UPDRS 2 is AUC-ROC of 0.881 from a CatBoost Classifier using the Hyperopt hyperparameters, with the data medication data, and with SMOTE applied. The best performance for UPDRS 3 is AUC-ROC of 0.729 from a LightGBM Classifier using the Hyperopt hyperparameters, with the data medication data, and with SMOTE applied.
 
 <br>
+<br>
 
 ## Actions  <a name="overview-actions"></a>
 
@@ -57,6 +59,7 @@ The default model parameters with no SMOTE and no medication data gave AUC-ROC a
 9. Tune the classification threshold.
 10. Save best model for each UPDRS.
 
+<br>
 <br>
 
 ## Results  <a name="overview-results"></a>
@@ -87,6 +90,7 @@ The default model parameters with no SMOTE and no medication data gave AUC-ROC a
 - **Precision:** **0.586**
 
 <br>
+<br>
 
 ## Growth/Next Steps <a name="overview-growth"></a>
 
@@ -94,6 +98,7 @@ While these models perform quite well, next steps would be to try to use bigger 
 
 Another idea is to using domain knowledge to specifically find proteins that are known to interact and generate new features from that subset. This would require an expert in Parkinsons biochemistry to know which proteins and peptides are of interest. Because there are 227 unique proteins and 968 unique peptides, the amount of research into each protein and peptide would not be doable by a hobbyist.
 
+<br>
 <br>
 
 ## Web Application <a name="webapp"></a>
@@ -103,6 +108,14 @@ Another idea is to using domain knowledge to specifically find proteins that are
 <br>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://jumpshare.com/embed/06HHnDZZ9EnTAR2d0J0I" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+
+<br>
+<br>
+
+## Github Repo <a name="github"></a>
+
+#### View the Github Repo here: [Parkinson's Github Repo](https://github.com/dagartga/Boosted-Models-for-Parkinsons-Prediction/)
 
 <br>
 <br>

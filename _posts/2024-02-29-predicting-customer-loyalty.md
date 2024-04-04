@@ -15,6 +15,7 @@ Our client, a grocery retailer, hired a market research consultancy to append ma
     - [Results](#overview-results)
     - [Growth/Next Steps](#overview-growth)
     - [Key Definition](#overview-definition)
+    - [Github Repo](#github)
 - [01. Data Overview](#data-overview)
 - [02. Modeling Overview](#modeling-overview)
 - [03. Linear Regression](#linreg-title)
@@ -84,6 +85,13 @@ The *loyalty score* metric measures the % of grocery spend (market level) that e
 Example 1: Customer X has a total grocery spend of $100 and all of this is spent with our client. Customer X has a *loyalty score* of 1.0
 
 Example 2: Customer Y has a total grocery spend of $200 but only 20% is spent with our client.  The remaining 80% is spend with competitors.  Customer Y has a *customer loyalty score* of 0.2
+<br>
+<br>
+
+### Github Repo <a name="github"></a>
+
+#### View the Github Repo here: [Causal Impact Github Repo](https://github.com/dagartga/data-science-portfolio) 
+
 <br>
 <br>
 ___

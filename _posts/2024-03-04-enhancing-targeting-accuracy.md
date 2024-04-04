@@ -14,6 +14,7 @@ Our client, a grocery retailer, wants to utilize Machine Learning to reduce mail
     - [Actions](#overview-actions)
     - [Results](#overview-results)
     - [Growth/Next Steps](#overview-growth)
+    - [Github Repo](#github)
 - [01. Data Overview](#data-overview)
 - [02. Modeling Overview](#modeling-overview)
 - [03. Logistic Regression](#logreg-title)
@@ -100,6 +101,13 @@ Based upon these, the chosen the model is the Random Forest as it was a) the mos
 While predictive accuracy was relatively high - other modeling approaches could be tested, especially those somewhat similar to Random Forest, for example XGBoost, LightGBM to see if even more accuracy could be gained.
 
 From a data point of view, further variables could be collected, and further feature engineering could be undertaken to ensure that we have as much useful information available for predicting customer loyalty
+<br>
+<br>
+
+### Github Repo <a name="github"></a>
+
+#### View the Github Repo here: [Causal Impact Github Repo](https://github.com/dagartga/data-science-portfolio) 
+
 <br>
 <br>
 ___
