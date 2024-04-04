@@ -14,6 +14,7 @@ In this project, I use Causal Impact Analysis to analyze and understand the sale
     - [Actions](#overview-actions)
     - [Results](#overview-results)
     - [Growth/Next Steps](#overview-growth)
+    - [Github Repo](#github)
 - [01. Causal Impact Analysis Overview](#causal-impact-overview)
 - [02. Data Overview & Preparation](#causal-impact-data-prep)
 - [03. Applying Causal Impact Analysis](#causal-impact-fit)
@@ -68,6 +69,13 @@ It would be interesting to track this uplift over time and see if:
 * See any form of uplift pull-forward
 
 It would also be interesting to analyze what it is that is making up this uplift.  Are customers increasing their spend across the same categories or are they buying into new categories?
+
+<br>
+<br>
+
+### Github Repo <a name="github"></a>
+
+#### View the Github Repo here: [Causal Impact Github Repo](https://github.com/dagartga/data-science-portfolio) 
 
 <br>
 <br>

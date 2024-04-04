@@ -13,6 +13,7 @@ In this project we apply Chi-Square Test For Independence (a Hypothesis Test) to
     - [Context](#overview-context)
     - [Actions](#overview-actions)
     - [Results & Discussion](#overview-results)
+    - [Github Repo](#github)
 - [01. Concept Overview](#concept-overview)
 - [02. Data Overview & Preparation](#data-overview)
 - [03. Applying Chi-Square Test For Independence](#chi-square-application)
@@ -79,6 +80,13 @@ Without running this Hypothesis Test, the client may have concluded that they sh
 Our results here also do not say that there *definitely isn't a difference between the two mailers* - we are only advising that we should not make any rigid conclusions *at this point*.  
 
 Running more A/B Tests like this, gathering more data, and then re-running this test may provide us, and the client more insight!
+
+<br>
+<br>
+
+### Github Repo <a name="github"></a>
+
+#### View the Github Repo here: [Causal Impact Github Repo](https://github.com/dagartga/data-science-portfolio) 
 
 <br>
 <br>

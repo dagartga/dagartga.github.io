@@ -14,6 +14,7 @@ In this project, I use k-means clustering to segment the customer base in order 
     - [Actions](#overview-actions)
     - [Results](#overview-results)
     - [Growth/Next Steps](#overview-growth)
+    - [Github Repo](#github)
 - [01. Data Overview](#data-overview)
 - [02. K-Means](#kmeans-title)
     - [Concept Overview](#kmeans-overview)
@@ -72,6 +73,13 @@ It would be interesting to run this clustering/segmentation at a lower level of 
 It could also be interesting to include customer metrics such as distance to store, gender, etc to give a even more well-rounded customer segmentation.
 
 Lastly, other clustering approaches such as hierarchical clustering or DBSCAN can be used and their results compared.
+<br>
+<br>
+
+### Github Repo <a name="github"></a>
+
+#### View the Github Repo here: [Causal Impact Github Repo](https://github.com/dagartga/data-science-portfolio) 
+
 <br>
 <br>
 
