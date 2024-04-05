@@ -53,6 +53,8 @@ I need to develop a Tableau dashboard to visualize bank customers by geographica
 
 ## Analysis
 
+<br>
+
 #### General Customers
 - Age Group is mainly represented by age 30-40
 - Gender is split fairly evenly (54:46) male:female
