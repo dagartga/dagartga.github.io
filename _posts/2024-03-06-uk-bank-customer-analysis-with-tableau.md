@@ -8,16 +8,12 @@ tags: [Tableau, Marketing, Data Visualization]
 
 I have been tasked with generating insights into the customer demographics for a UK Bank. They have customers in England, Scotland, Wales, and Northern Ireland. To create better marketing content, they asked me to create some customer segmentation.
 
-<br>
-
 ---
 
 ## Situation
 
 **A UK bank wants to generate a marketing campaign to promote a new financial product they are releasing. The marketing team wants to have customer analytics to determine how to target their marketing campaign.**
 
-<br>
-<br>
 ---
 
 ## Executive Summary
@@ -31,14 +27,11 @@ I have been tasked with generating insights into the customer demographics for a
     
 **Recommendation:** Because the customer demographics are very different between the regions, targeted regional marketing campaigns should be implemented rather than simply a general marketing campaign.
 
-<br>
-<br>
 ---
 
-<iframe seamless frameborder="0" src="https://public.tableau.com/views/UKBankAnalysis_17107761108470/UKBankCustomerAnalysis?:embed=yes&:display_count=yes&:showVizHome=no" width = '1090' height = '900'></iframe>
+## Dashboard
 
-<br>
-<br>
+<iframe seamless frameborder="0" src="https://public.tableau.com/views/UKBankAnalysis_17107761108470/UKBankCustomerAnalysis?:embed=yes&:display_count=yes&:showVizHome=no" width = '1090' height = '900'></iframe>
 
 ---
 
@@ -46,6 +39,7 @@ I have been tasked with generating insights into the customer demographics for a
 I need to develop a Tableau dashboard to visualize bank customers by geographical region and demographics so that I can convey to stakeholders how to optimize marketing strategies.
 
 ---
+
 ## Action
 
 1. **Geographical Region:** Show a map of the United Kingdom segmented by the four regions with the number of customers in each region.
