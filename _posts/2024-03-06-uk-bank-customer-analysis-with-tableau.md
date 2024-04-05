@@ -25,7 +25,8 @@ I have been tasked with generating insights into the customer demographics for a
     - **Northern Ireland** - Non-Traditional Class Women
     - **Wales** - Affluent White-Collar Individuals with Higher Disposable Incomes
     
-**Recommendation:** Because the customer demographics are very different between the regions, targeted regional marketing campaigns should be implemented rather than simply a general marketing campaign.
+### Recommendation
+Because the customer demographics are very different between the regions, targeted regional marketing campaigns should be implemented rather than simply a general marketing campaign.
 
 ---
 
