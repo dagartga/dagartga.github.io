@@ -59,6 +59,7 @@ I need to develop a Tableau dashboard to visualize bank customers by geographica
 - The distribution of balances is skewed with the largest % of customers with a low balance of 0-15K and it slopes downward continually
 
 <br>
+<br>
 
 #### England - White-Collar Professional in their 30s 
 - The population is more than 50% of the customers and has the largest influence on the distribution of customers
@@ -68,6 +69,7 @@ I need to develop a Tableau dashboard to visualize bank customers by geographica
 - **Takeaway:** Focus on men and women who are white collar in their 30s for marketing
 
 <br>
+<br>
 
 #### Scotland - Middle-Aged Blue-Collar Male Worker
 - The population is the second largest customer group with almost 25% of the customers
@@ -76,11 +78,13 @@ I need to develop a Tableau dashboard to visualize bank customers by geographica
 - **Takeaway:** Focus marketing on Blue Collar Men who are middle aged.
 
 <br>
+<br>
 
 #### Wales - Affluent White-Collar Individuals with Higher Disposable Incomes 
 - Similar to England but with a larger balance that is the primary distribution, 15-30K has a largest distribution
 - **Takeaway:** Focus marketing on White Collar men and women who may have more money than other regions
 
+<br>
 <br>
 
 #### Northern Ireland - Non-Traditional Class Women
