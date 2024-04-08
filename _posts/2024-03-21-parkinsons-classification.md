@@ -1029,7 +1029,7 @@ By looking at the Feature Importances for the top ten features, there are some i
 
 <br>
 
-<div style="text-align:center;">
+<div style="text-align:left;">
   <img src="/img/posts/updrs_1_feat_imp.png" alt="image" width="50%" height="auto">
 </div>
 
@@ -1066,7 +1066,7 @@ Three proteins/peptides are involved in RNA splicing, two are involved in immuno
 
 <br>
 
-<div style="text-align:center;">
+<div style="text-align:left;">
   <img src="/img/posts/updrs_2_feat_imp.png" alt="image" width="50%" height="auto">
 </div>
 
@@ -1102,7 +1102,7 @@ Four protien/peptides are involed in iron binding, one in actin modulation, one 
 
 <br>
 
-<div style="text-align:center;">
+<div style="text-align:left;">
   <img src="/img/posts/updrs_3_feat_imp.png" alt="image" width="50%" height="auto">
 </div>
 
