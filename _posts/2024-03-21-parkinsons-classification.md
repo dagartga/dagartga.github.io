@@ -27,7 +27,8 @@ In this project, I created a web application that uses three boosted classificat
     - [Fine Tune Threshold](#tuned-threshold)
     - [Add Medication Data](#on-medication)
 - [05. Interpreting The Results](#interpret-results)
-- [06. Growth & Next Steps](#growth-next-steps)
+- [06. Model Explainability](#explainability)
+- [07. Growth & Next Steps](#growth-next-steps)
 - [Appendix: Footnotes](#footnotes)
 
 ___
@@ -93,6 +94,20 @@ The default model parameters with no SMOTE and no medication data gave AUC-ROC a
 <br>
 
 ## Growth/Next Steps <a name="overview-growth"></a>
+
+### Areas for Scientific Research
+
+Based on the Feature Importances from the different models, some areas for scientific research are *Immunoglobulin response, Transferrins, RNA cleavage, and immune response*. Proteins found that are involved in these biological processes were more prevalent. 
+
+**Specific proteins of more interest are:**
+- P06396 Gelsolin
+- P01621 Immunoglobulin kappa variable 3-20
+- Q9UKV8 Argonaute2
+- P05060 Secretogranin-1
+- P02787 Serotransferrin
+- P02790 Hemopexin
+
+### Improve Model Performance
 
 While these models perform quite well, next steps would be to try to use bigger compute power to generate and train models using the combination of protein values and peptide values. Unfortunately, on our local machine this number becomes massive and is not reasonable for training times.
 
@@ -996,6 +1011,31 @@ ___
 - **AUC:** **0.729**
 - **Recall:** **0.781**
 - **Precision:** **0.586**
+
+<br>
+<br>
+
+___
+
+# Growth/Next Steps <a name="growth-next-steps"></a>
+
+### Areas for Scientific Research
+
+Based on the Feature Importances from the different models, some areas for scientific research are *Immunoglobulin response, Transferrins, RNA cleavage, and immune response*. Proteins found that are involved in these biological processes were more prevalent. 
+
+**Specific proteins of more interest are:**
+- P06396 Gelsolin
+- P01621 Immunoglobulin kappa variable 3-20
+- Q9UKV8 Argonaute2
+- P05060 Secretogranin-1
+- P02787 Serotransferrin
+- P02790 Hemopexin
+
+### Improve Model Performance
+
+While these models perform quite well, next steps would be to try to use bigger compute power to generate and train models using the combination of protein values and peptide values. Unfortunately, on our local machine this number becomes massive and is not reasonable for training times.
+
+Another idea is to using domain knowledge to specifically find proteins that are known to interact and generate new features from that subset. This would require an expert in Parkinsons biochemistry to know which proteins and peptides are of interest. Because there are 227 unique proteins and 968 unique peptides, the amount of research into each protein and peptide would not be doable by a hobbyist.
 
 <br>
 <br>
