@@ -148,9 +148,9 @@ In the code below, I:
 * Import the required data from the *transactions* and *campaign_data* tables (3 months prior, 3 months post campaign)
 * Aggregate the transactions table from customer/transaction/product area level to customer/date level
 * Merge on the signup flag from the *campaign_data* table
-* Pivot & aggregate to give us aggregated daily sales by signed-up/did not sign-up groups
+* Pivot and aggregate to give the aggregated daily sales by signed-up/did not sign-up groups
 * Maneuver the data specifically for the pycausalimpact algorithm
-* Give our groups some meaningful names, to help with interpretation
+* Give the groups some meaningful names, to help with interpretation
 
 <br>
 ```python
