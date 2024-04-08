@@ -107,6 +107,8 @@ Based on the Feature Importances from the different models, some areas for scien
 - P02787 Serotransferrin
 - P02790 Hemopexin
 
+<br>
+
 ### Improve Model Performance
 
 While these models perform quite well, next steps would be to try to use bigger compute power to generate and train models using the combination of protein values and peptide values. Unfortunately, on our local machine this number becomes massive and is not reasonable for training times.
@@ -1027,7 +1029,10 @@ By looking at the Feature Importances for the top ten features, there are some i
 
 <br>
 
-![](/img/posts/updrs_1_feat_imp.png)
+<div style="text-align:center;">
+  <img src="/img/posts/updrs_1_feat_imp.png" alt="image" width="50%" height="auto">
+</div>
+
 
 <br>
 
@@ -1052,7 +1057,8 @@ By looking at the Feature Importances for the top ten features, there are some i
 10. **P08603** - Complement Factor H
     - Glycoprotein that plays an essential role in maintaining a well-balanced immune response.
 
-**Summary:** Three proteins/peptides are involved in RNA splicing, two are involved in immunoglobulin structure, two are involved in immune response, one in actin formation, one in lipase and one in neuroendocrine activity.
+### UPDRS 1 Summary
+Three proteins/peptides are involved in RNA splicing, two are involved in immunoglobulin structure, two are involved in immune response, one in actin formation, one in lipase and one in neuroendocrine activity.
 
 <br>
 
@@ -1060,7 +1066,9 @@ By looking at the Feature Importances for the top ten features, there are some i
 
 <br>
 
-![](/img/posts/updrs_2_feat_imp.png)
+<div style="text-align:center;">
+  <img src="/img/posts/updrs_2_feat_imp.png" alt="image" width="50%" height="auto">
+</div>
 
 <br>
 
@@ -1085,7 +1093,8 @@ By looking at the Feature Importances for the top ten features, there are some i
 10. **P02787** - Serotransferrin
     - Iron binding transport protein.
 
-**Summary:** Four protien/peptides are involed in iron binding, one in actin modulation, one lipase, one protease inhibitor, one in neurite and axon growth, and one in Vitamin E transport.
+### UPDRS 2 Summary
+Four protien/peptides are involed in iron binding, one in actin modulation, one lipase, one protease inhibitor, one in neurite and axon growth, and one in Vitamin E transport.
 
 <br>
 
@@ -1093,7 +1102,9 @@ By looking at the Feature Importances for the top ten features, there are some i
 
 <br>
 
-![](/img/posts/updrs_3_feat_imp.png)
+<div style="text-align:center;">
+  <img src="/img/posts/updrs_3_feat_imp.png" alt="image" width="50%" height="auto">
+</div>
 
 <br>
 
@@ -1118,8 +1129,10 @@ By looking at the Feature Importances for the top ten features, there are some i
 10. **P02790** - Hemopexin
     - Binds heme and transports it to the liver for breakdown and iron recovery.
 
-**Summary:** Three protien/peptides are involed in Immunoglobulins, one in immune response, one in iron, one lipase, one in cleavage, one in neuroendocrine activity, one in Calcium transport, and one in structural activity.
+### UPDRS 3 Summary
+Three protien/peptides are involed in Immunoglobulins, one in immune response, one in iron, one lipase, one in cleavage, one in neuroendocrine activity, one in Calcium transport, and one in structural activity.
 
+<br>
 <br>
 
 ### Final Summary
@@ -1151,6 +1164,9 @@ Based on the Feature Importances from the different models, some areas for scien
 - P05060 Secretogranin-1
 - P02787 Serotransferrin
 - P02790 Hemopexin
+
+
+<br>
 
 ### Improve Model Performance
 
