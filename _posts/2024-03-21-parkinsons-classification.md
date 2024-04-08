@@ -1017,6 +1017,127 @@ ___
 
 ___
 
+# Model Explainability <a name="explainability"></a>
+
+By looking at the Feature Importances for the top ten features, there are some interesting areas for further research.
+
+<br>
+
+### UPDRS 1 Top Ten Features
+
+<br>
+
+![](/img/posts/updrs_1_feat_imp.png)
+
+<br>
+
+1. **P01621** - Immunoglobulin kappa variable 3-20
+    - the variable domain of immunoglobulin light chains that participates in the antigen recognition.
+2. **P06396** - Gelsolin
+    - Calcium regulated, actin modulating protein that binds to the plus ends of actin monomers or filaments.
+3. **P01621** - Immunoglobulin kappa variable 3-20
+    - the variable domain of immunoglobulin light chains that participates in the antigen recognition.
+4. **Q9UKV8** - Argonaute2
+    - Required for RNA mediated gene splicing.
+5. **P06707** - Apolipoprotein A-IV
+    - Required for efficient activation of lipoprotein lipase by Apoc-II and potent activator of LCAT.
+6. **Q9UKV8** - Argonaute2
+    - Required for RNA mediated gene splicing.
+7. **P02765** - Fetuin-A
+    - Counteracts the host antiviral immune response when activated and phosphorylated.
+8. **P07998** - Ribonuclease Pancreatic
+    - Endonuclease that catalyzes the cleavage of RNA.
+9. **P05060** - Secretogranin-1
+    - Neuroendocrine secretory granule protein.
+10. **P08603** - Complement Factor H
+    - Glycoprotein that plays an essential role in maintaining a well-balanced immune response.
+
+**Summary:** Three proteins/peptides are involved in RNA splicing, two are involved in immunoglobulin structure, two are involved in immune response, one in actin formation, one in lipase and one in neuroendocrine activity.
+
+<br>
+
+### UPDRS 2 Top Ten Features
+
+<br>
+
+![](/img/posts/updrs_2_feat_imp.png)
+
+<br>
+
+1. **Medication Unknown**
+    - When the patient's medication status is not known, it helps predict severity of UPDRS 2.
+2. **P06396** - Gelsolin
+    - Calcium regulated, actin modulating protein that binds to the plus ends of actin monomers or filaments.
+3. **P06727** - Apolipoprotein A-IV
+    - Required for efficient activation of lipoprotine lipase by ApoC-II and potent activator of LCAT.
+4. **P01042** - Kinnogen-1
+    - Inhibitor of thiol proteases.
+5. **Q13740** - CD166 antigen
+    - Promotes neurite extension, axon growth and axon guidance.
+6. **P02787** - Serotransferrin
+    - Iron binding transport protein.
+7. **P02787** - Serotransferrin
+    - Iron binding transport protein.
+8. **P43652** - Afamin
+    - May be involved in the transport of Vitamin E across the blood brain barrier.
+9. **P02790** - Hemopexin
+    - Binds heme and transports it to the liver for breakdown and iron recovery.
+10. **P02787** - Serotransferrin
+    - Iron binding transport protein.
+
+**Summary:** Four protien/peptides are involed in iron binding, one in actin modulation, one lipase, one protease inhibitor, one in neurite and axon growth, and one in Vitamin E transport.
+
+<br>
+
+### UPDRS 3 Top Ten Features
+
+<br>
+
+![](/img/posts/updrs_3_feat_imp.png)
+
+<br>
+
+1. **P00734** - Prothrombin
+    - Converts fibrinogen to fibrin by cleaving bonds after Arg and Lys. Functions in blood homeostasis, inflammation and wound healing.
+2. **Q13283** - Ras GTPase-activating protein-binding protein
+    - Involved in various processes, such as stress granule formation and innate immunity.
+3. **P01859** - Immunoglobulin heavy constant gamma 2
+    - Constant region of immunoglobulin heavy chains.
+4. **P25311** - Zinc-alpha-2-glycoprotein
+    - Stimulates lipid degradation in adipocytes.
+5. **P08133** - Annexin A6
+    - May associate with C21 and may regulate release of Calcium from intracellular stores.
+6. **P04433** - Immunoglobulin kappa variable 3-11
+    - V region of the variable domain of immunoglobulin light chains.
+7. **P05060** - Secretogranin-1
+    - Neuroendocrine secretory granule protein.
+8. **P51884** - Lumican
+    - Structural molecule activity.
+9. **P01876** - Immunoglobulin heavy constant alpha 1
+    - Constant region of immunoglobulin heavy chains.
+10. **P02790** - Hemopexin
+    - Binds heme and transports it to the liver for breakdown and iron recovery.
+
+**Summary:** Three protien/peptides are involed in Immunoglobulins, one in immune response, one in iron, one lipase, one in cleavage, one in neuroendocrine activity, one in Calcium transport, and one in structural activity.
+
+<br>
+
+### Final Summary
+This a common trend of proteins groups, where Immunoglobulins, Iron transport or recovery, RNA splicing, and immune response are highly represented. These types of activities can be explored to see how it relates to Parkinson's disease.
+
+Furthermore, researching more into the proteins that show up in the top ten more than once, which are: 
+- P06396 Gelsolin
+- P01621 Immunoglobulin kappa variable 3-20
+- Q9UKV8 Argonaute2
+- P05060 Secretogranin-1
+- P02787 Serotransferrin
+- P02790 Hemopexin
+
+<br>
+<br>
+
+___
+
 # Growth/Next Steps <a name="growth-next-steps"></a>
 
 ### Areas for Scientific Research
