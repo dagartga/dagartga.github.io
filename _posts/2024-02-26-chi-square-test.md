@@ -86,7 +86,7 @@ Running more A/B Tests like this, gathering more data, and then re-running this 
 
 ### Github Repo <a name="github"></a>
 
-#### View the Github Repo here: [Causal Impact Github Repo](https://github.com/dagartga/data-science-portfolio) 
+#### View the Github Repo here: [Chi-Squared Github Repo](https://github.com/dagartga/data-science-portfolio) 
 
 <br>
 <br>

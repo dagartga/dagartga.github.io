@@ -83,7 +83,7 @@ I will also propose the development of the "Keyword Search Engine" which will he
 
 ### Github Repo <a name="github"></a>
 
-#### View the Github Repo here: [Causal Impact Github Repo](https://github.com/dagartga/data-science-portfolio) 
+#### View the Github Repo here: [Associattion Rule Github Repo](https://github.com/dagartga/data-science-portfolio) 
 
 <br>
 <br>

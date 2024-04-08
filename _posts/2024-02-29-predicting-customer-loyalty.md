@@ -90,7 +90,7 @@ Example 2: Customer Y has a total grocery spend of $200 but only 20% is spent wi
 
 ### Github Repo <a name="github"></a>
 
-#### View the Github Repo here: [Causal Impact Github Repo](https://github.com/dagartga/data-science-portfolio) 
+#### View the Github Repo here: [Predict Customer Loyalty Github Repo](https://github.com/dagartga/data-science-portfolio) 
 
 <br>
 <br>

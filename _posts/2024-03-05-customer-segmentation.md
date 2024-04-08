@@ -78,7 +78,7 @@ Lastly, other clustering approaches such as hierarchical clustering or DBSCAN ca
 
 ### Github Repo <a name="github"></a>
 
-#### View the Github Repo here: [Causal Impact Github Repo](https://github.com/dagartga/data-science-portfolio) 
+#### View the Github Repo here: [Customer Loyalty Github Repo](https://github.com/dagartga/data-science-portfolio) 
 
 <br>
 <br>

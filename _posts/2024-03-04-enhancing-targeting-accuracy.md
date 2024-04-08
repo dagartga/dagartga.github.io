@@ -106,7 +106,7 @@ From a data point of view, further variables could be collected, and further fea
 
 ### Github Repo <a name="github"></a>
 
-#### View the Github Repo here: [Causal Impact Github Repo](https://github.com/dagartga/data-science-portfolio) 
+#### View the Github Repo here: [Enhancing Targeting Github Repo](https://github.com/dagartga/data-science-portfolio) 
 
 <br>
 <br>
