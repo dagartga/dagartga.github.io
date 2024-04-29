@@ -9,18 +9,28 @@ In this project, I use Association Rule Learning to analyze the transactional re
 
 # Table of contents
 
-- [00. Project Overview](#overview-main)
-    - [Context](#overview-context)
-    - [Actions](#overview-actions)
-    - [Results](#overview-results)
-    - [Growth/Next Steps](#overview-growth)
-    - [Github Repo](#github)
-- [01. Data Overview](#data-overview)
-- [02. Apriori Overview](#apriori-overview)
-- [03. Data Preparation](#apriori-data-prep)
-- [04. Applying The Apriori Algorithm](#apriori-fit)
-- [05. Interpreting The Results](#apriori-results)
-- [06. Growth & Next Steps](#growth-next-steps)
+- [Table of contents](#table-of-contents)
+- [Project Overview  ](#project-overview--)
+    - [Context ](#context-)
+    - [Actions ](#actions-)
+    - [Results ](#results-)
+    - [Growth/Next Steps ](#growthnext-steps-)
+    - [Github Repo ](#github-repo-)
+      - [View the Github Repo here: Association Rule Github Repo](#view-the-github-repo-here-association-rule-github-repo)
+- [Data Overview  ](#data-overview--)
+- [Apriori Overview  ](#apriori-overview--)
+        - [Support](#support)
+        - [Confidence](#confidence)
+        - [Expected Confidence](#expected-confidence)
+        - [Lift](#lift)
+        - [In Practice](#in-practice)
+        - [An Important Consideration](#an-important-consideration)
+- [Data Preparation  ](#data-preparation--)
+- [Applying The Apriori Algorithm ](#applying-the-apriori-algorithm-)
+- [Interpreting The Results ](#interpreting-the-results-)
+      - [Associated Products](#associated-products)
+      - [Search Tool For Category Managers](#search-tool-for-category-managers)
+- [Growth \& Next Steps ](#growth--next-steps-)
 
 ___
 
@@ -83,7 +93,7 @@ I will also propose the development of the "Keyword Search Engine" which will he
 
 ### Github Repo <a name="github"></a>
 
-#### View the Github Repo here: [Associattion Rule Github Repo](https://github.com/dagartga/data-science-portfolio) 
+#### View the Github Repo here: [Association Rule Github Repo](https://github.com/dagartga/data-science-portfolio) 
 
 <br>
 <br>
@@ -94,7 +104,7 @@ ___
 
 Our initial dataset contains 3,500 transactions, each of which shows the alcohol products that were present in that transaction.  
 
-In the code below, the Pandas package, as well as, the priori algorithm from the apyori library are imported and the raw data is loaded.
+In the code below, the Pandas package, as well as, the apriori algorithm from the apyori library are imported and the raw data is loaded.
 
 <br>
 ```python
@@ -113,19 +123,19 @@ A sample of this data (the first 10 transactions) can be seen below:
 <br>
 <br>
 
-| **transaction_id** | **product1** | **product2** | **product3** | **product4** | **product5** | **…** |
-|---|---|---|---|---|---|---|
-| 1 | Premium Lager | Iberia | … |  |  | ... |
-| 2 | Sparkling | Premium Lager | Premium Cider | Own Label | Italy White | … |
-| 3 | Small Sizes White | Small Sizes Red | Sherry Spanish | No/Low Alc Cider | Cooking Wine | … |
-| 4 | White Uk | Sherry Spanish | Port | Italian White | Italian Red | … |
-| 5 | Premium Lager | Over-Ice Cider | French White South | French Rose | Cocktails/Liqueurs | … |
-| 6 | Kosher Red | … |  |  |  | ... |
-| 7 | Own Label | Italy White | Australian Red | … |  | ... |
-| 8 | Brandy/Cognac | … |  |  |  | ... |
-| 9 | Small Sizes White | Bottled Ale | … |  |  | ... |
-| 10 | White Uk | Spirits Mixers | Sparkling | German | Australian Red | … |
-| … | … | … | … | … | … | … |
+| **transaction_id** | **product1**      | **product2**    | **product3**       | **product4**     | **product5**       | **…** |
+| ------------------ | ----------------- | --------------- | ------------------ | ---------------- | ------------------ | ----- |
+| 1                  | Premium Lager     | Iberia          | …                  |                  |                    | ...   |
+| 2                  | Sparkling         | Premium Lager   | Premium Cider      | Own Label        | Italy White        | …     |
+| 3                  | Small Sizes White | Small Sizes Red | Sherry Spanish     | No/Low Alc Cider | Cooking Wine       | …     |
+| 4                  | White Uk          | Sherry Spanish  | Port               | Italian White    | Italian Red        | …     |
+| 5                  | Premium Lager     | Over-Ice Cider  | French White South | French Rose      | Cocktails/Liqueurs | …     |
+| 6                  | Kosher Red        | …               |                    |                  |                    | ...   |
+| 7                  | Own Label         | Italy White     | Australian Red     | …                |                    | ...   |
+| 8                  | Brandy/Cognac     | …               |                    |                  |                    | ...   |
+| 9                  | Small Sizes White | Bottled Ale     | …                  |                  |                    | ...   |
+| 10                 | White Uk          | Spirits Mixers  | Sparkling          | German           | Australian Red     | …     |
+| …                  | …                 | …               | …                  | …                | …                  | …     |
 
 <br>
 To explain this data, *Transaction 1* (the first row) contained two products, Premium Lager, and Iberia.  As there were only two products in this transaction, the remaining columns are blank.
@@ -308,14 +318,14 @@ A sample of this data (the first 5 product pairs - not in any order) can be seen
 <br>
 <br>
 
-| **product1** | **product2** | **support** | **confidence** | **lift** |
-|---|---|---|---|---|
-| American Rose | America White | 0.021 | 0.532 | 3.998 |
-| America White | American White | 0.054 | 0.408 | 3.597 |
-| Australian Rose | America White | 0.005 | 0.486 | 3.653 |
-| Low Alcohol A.C | America White | 0.003 | 0.462 | 3.466 |
-| American Rose | American Red | 0.016 | 0.403 | 3.575 |
-| … | … | … | … | … |
+| **product1**    | **product2**   | **support** | **confidence** | **lift** |
+| --------------- | -------------- | ----------- | -------------- | -------- |
+| American Rose   | America White  | 0.021       | 0.532          | 3.998    |
+| America White   | American White | 0.054       | 0.408          | 3.597    |
+| Australian Rose | America White  | 0.005       | 0.486          | 3.653    |
+| Low Alcohol A.C | America White  | 0.003       | 0.462          | 3.466    |
+| American Rose   | American Red   | 0.016       | 0.403          | 3.575    |
+| …               | …              | …           | …              | …        |
 
 <br>
 In the DataFrame, there are two products in the pair followed by the three key metrics; Support, Confidence, and Lift. 
@@ -341,19 +351,19 @@ The ten highest product relationships, based upon Lift, are in the table below:
 <br>
 <br>
 
-| **product1** | **product2** | **support** | **confidence** | **lift** |
-|---|---|---|---|---|
-| Wine Gifts | Beer/Lager Gifts | 0.004 | 0.314 | 10.173 |
-| Beer/Lager Gifts | Spirits & Fortified | 0.013 | 0.427 | 9.897 |
-| Wine Gifts | Spirits & Fortified | 0.006 | 0.412 | 9.537 |
-| Red Wine Bxes & 25Cl | White Boxes | 0.015 | 0.474 | 9.344 |
-| French White Rhone | French Red | 0.003 | 0.480 | 8.691 |
-| Small Sizeswhite Oth | Small Sizes White | 0.005 | 0.559 | 8.340 |
-| Small Sizes Red | Small Sizes White | 0.025 | 0.486 | 7.258 |
-| French White Loire | French White South | 0.004 | 0.349 | 6.763 |
-| French White Rhone | French White 2 | 0.005 | 0.760 | 6.661 |
-| Small Sizeswhite Oth | Small Sizes Red | 0.003 | 0.324 | 6.306 |
-| Small Sizes Wht Othr | Small Sizes White | 0.003 | 0.414 | 6.176 |
+| **product1**         | **product2**        | **support** | **confidence** | **lift** |
+| -------------------- | ------------------- | ----------- | -------------- | -------- |
+| Wine Gifts           | Beer/Lager Gifts    | 0.004       | 0.314          | 10.173   |
+| Beer/Lager Gifts     | Spirits & Fortified | 0.013       | 0.427          | 9.897    |
+| Wine Gifts           | Spirits & Fortified | 0.006       | 0.412          | 9.537    |
+| Red Wine Bxes & 25Cl | White Boxes         | 0.015       | 0.474          | 9.344    |
+| French White Rhone   | French Red          | 0.003       | 0.480          | 8.691    |
+| Small Sizeswhite Oth | Small Sizes White   | 0.005       | 0.559          | 8.340    |
+| Small Sizes Red      | Small Sizes White   | 0.025       | 0.486          | 7.258    |
+| French White Loire   | French White South  | 0.004       | 0.349          | 6.763    |
+| French White Rhone   | French White 2      | 0.005       | 0.760          | 6.661    |
+| Small Sizeswhite Oth | Small Sizes Red     | 0.003       | 0.324          | 6.306    |
+| Small Sizes Wht Othr | Small Sizes White   | 0.003       | 0.414          | 6.176    |
 
 <br>
 Interestingly, the strongest relationship exists between two products labeled as "gifts" - this is useful information for the category managers as they may want to ensure that gift products are available in one section of the aisle, rather than existing in their respective product types.
@@ -382,23 +392,23 @@ The results of this search, in order of descending Lift are as follows:
 <br>
 <br>
 
-| **product1** | **product2** | **support** | **confidence** | **lift** |
-|---|---|---|---|---|
-| New Zealand Red | Malt Whisky | 0.005326605 | 0.271428571 | 5.628986711 |
-| New Zealand Red | Iberia White | 0.007289038 | 0.371428571 | 4.616326531 |
-| New Zealand Red | New Zealand White | 0.012615643 | 0.642857143 | 4.613825812 |
-| New Zealand Red | French White South | 0.004485562 | 0.228571429 | 4.431055901 |
-| New Zealand Red | French White 2 | 0.009531819 | 0.485714286 | 4.256862057 |
-| New Zealand Red | French Red | 0.004205214 | 0.214285714 | 3.879985497 |
-| New Zealand Red | French Red South | 0.006447996 | 0.328571429 | 3.868033946 |
-| New Zealand Red | South America | 0.010933558 | 0.557142857 | 3.799863425 |
-| New Zealand Red | Other Red | 0.004485562 | 0.228571429 | 3.591692889 |
-| New Zealand Red | Iberia | 0.012054948 | 0.614285714 | 3.528433402 |
-| New Zealand Red | Champagne | 0.008690777 | 0.442857143 | 3.526052296 |
-| New Zealand White | South America White | 0.049341183 | 0.354124748 | 3.423205902 |
-| New Zealand Red | French Red 2 | 0.010092515 | 0.514285714 | 3.359811617 |
-| New Zealand Red | South America White | 0.006728343 | 0.342857143 | 3.314285714 |
-| New Zealand Red | Australia White | 0.007289038 | 0.371428571 | 3.215742025 |
+| **product1**      | **product2**        | **support** | **confidence** | **lift**    |
+| ----------------- | ------------------- | ----------- | -------------- | ----------- |
+| New Zealand Red   | Malt Whisky         | 0.005326605 | 0.271428571    | 5.628986711 |
+| New Zealand Red   | Iberia White        | 0.007289038 | 0.371428571    | 4.616326531 |
+| New Zealand Red   | New Zealand White   | 0.012615643 | 0.642857143    | 4.613825812 |
+| New Zealand Red   | French White South  | 0.004485562 | 0.228571429    | 4.431055901 |
+| New Zealand Red   | French White 2      | 0.009531819 | 0.485714286    | 4.256862057 |
+| New Zealand Red   | French Red          | 0.004205214 | 0.214285714    | 3.879985497 |
+| New Zealand Red   | French Red South    | 0.006447996 | 0.328571429    | 3.868033946 |
+| New Zealand Red   | South America       | 0.010933558 | 0.557142857    | 3.799863425 |
+| New Zealand Red   | Other Red           | 0.004485562 | 0.228571429    | 3.591692889 |
+| New Zealand Red   | Iberia              | 0.012054948 | 0.614285714    | 3.528433402 |
+| New Zealand Red   | Champagne           | 0.008690777 | 0.442857143    | 3.526052296 |
+| New Zealand White | South America White | 0.049341183 | 0.354124748    | 3.423205902 |
+| New Zealand Red   | French Red 2        | 0.010092515 | 0.514285714    | 3.359811617 |
+| New Zealand Red   | South America White | 0.006728343 | 0.342857143    | 3.314285714 |
+| New Zealand Red   | Australia White     | 0.007289038 | 0.371428571    | 3.215742025 |
 
 <br>
 There appears to be *some* relationship between New Zealand wines and other New Zealand wines, but what is also interesting is that New Zealand wines seem to be more associated with French and South American wines than they are with Australian Wines.
