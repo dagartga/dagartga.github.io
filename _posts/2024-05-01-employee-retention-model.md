@@ -14,6 +14,7 @@ ___
 
 - [Table of Contents](#table-of-contents)
 - [Project Overview and Use Case](#project-overview-and-use-case)
+- [Github Repo](#github-repo)
 - [Web Application](#web-application)
 - [Data](#data)
 - [Exploratory Data Analysis](#exploratory-data-analysis)
@@ -58,7 +59,18 @@ When dealing with employee data, it is important to remove any demographic data 
 
 ___
 
+# Github Repo <a name="github-repo"></a>
+[Github Repo Link](https://github.com/dagartga/Salifort_Motors_Employee_Retention_Project)
+
+<br>
+<br>
+
+___
+
 # Web Application <a name="web-application"></a>
+
+An interesting experiment is to keep all of the values the same and simply adjust the "Years Spent at Salifort Motors" value. The probability of leaving will increase each of the first 4 years and then start to decline at 5 years and higher. This shows if employees make it to their 5 year work anniversary they are very likely to continue at the company. 
+
 #### View the Interactive Web App Here: 
 [Salifort Motors Project Web App](https://salifort-motors-employee-retention.streamlit.app/)
 
