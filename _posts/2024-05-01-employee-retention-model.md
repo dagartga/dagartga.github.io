@@ -284,7 +284,15 @@ For this case, **False Negatives are more important that False Positives**, beca
 ___
 
 # Final Model Decision <a name="final-model-decision"></a>
-**The XGBoost Tuned All Features model was chosen because it had the best Recall score while also having the highest F1 score**
+The **XGBoost Tuned All Features** model was chosen because it had the best Recall score while also having the highest F1 score. This model was trained on all of the provided features as well as the two engineered features, over worked high performer and promotion last 5 years.
+
+- **XGBoost Tuned All Features**
+    - Learning Rate: 0.046
+    - Number of Estimators: 276
+    - Max Depth: 15 
+    - Min Child Weight: 1
+    - Subsample: 0.765
+    - Scale Positive Weight: 3
 
 <br>
 <br>
