@@ -95,17 +95,6 @@ Dataset can be downloaded from Kaggle: [Salifort Motors Dataset](https://www.kag
 <br>
 <br>
 
-## Project Evaluation <a name="project-evaluation"></a>
-
-- **Final Model Accuracy:**
-   -  98% for classifying Employee Churn.
-
-- **Final Model Recall:**
-   - 93% of the time the model will correctly predict the employees who will leave.
- 
-<br>
-<br>
-
 ___
 
 # Exploratory Data Analysis <a name="exploratory-data-analysis"></a>
@@ -297,6 +286,18 @@ ___
 # Final Model Decision <a name="final-model-decision"></a>
 **The XGBoost Tuned All Features model was chosen because it had the best Recall score while also having the highest F1 score**
 
+<br>
+<br>
+
+
+## Project Evaluation <a name="project-evaluation"></a>
+
+- **Final Model Accuracy:**
+   -  98% for classifying Employee Churn.
+
+- **Final Model Recall:**
+   - 93% of the time the model will correctly predict the employees who will leave.
+ 
 <br>
 <br>
 
