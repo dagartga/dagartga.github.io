@@ -1,4 +1,11 @@
-# Salifort Motors Employee Retention Project
+---
+layout: post
+title: Salifort Motors Employee Retention Analysis
+image: "/posts/salifort_motors_logo.png"
+tags: [XGBoost, Machine Learning, Python, Class Imbalance]
+---
+
+# Salifort Motors Employee Retention Analysis
 ## Project Overview and Use Case:
 
 The HR department at Salifort Motors wants to take some initiatives to improve employee satisfaction levels at the company. They collected survey data from employees, but now they don’t know what to do with it. They primarily they would like to answer the following question:
