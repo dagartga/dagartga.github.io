@@ -31,7 +31,7 @@ ___
 
 The HR department at Salifort Motors wants to take some initiatives to improve employee satisfaction levels at the company. They collected survey data from employees, but now they don’t know what to do with it. They primarily they would like to answer the following question:
 
-**What is likely to make the employee leave the company?**
+### *What is likely to make the employee leave the company?*
 
 The goal in this project is to analyze the data collected by the HR department and to build a model that predicts whether or not an employee will leave the company.
 
@@ -62,7 +62,7 @@ ___
 #### View the Interactive Web App Here: 
 [Salifort Motors Project Web App](https://salifort-motors-employee-retention.streamlit.app/)
 
-![Streamlit_App](../img/posts/salifort/salifort_web_app_screenshot.png)
+![Streamlit_App](/img/posts/salifort/salifort_web_app_screenshot.png)
 
 <br>
 <br>
@@ -112,7 +112,7 @@ ___
 
 ### Imbalanced Target
 
-![Employee_Target](../img/posts/salifort/employee_target_pie_chart.png)
+![Employee_Target](/img/posts/salifort/employee_target_pie_chart.png)
 
 
 #### Adjustments for Imbalanced Target:
@@ -126,7 +126,7 @@ ___
 
 ### Pairplot Analysis
 
-![Employee_Pairplot](../img/posts/salifort/pairplot.png)
+![Employee_Pairplot](/img/posts/salifort/pairplot.png)
 
 
 This is very insightful and by using the hue set to the target, there are some very significant patterns viewable.
@@ -146,7 +146,7 @@ This is very insightful and by using the hue set to the target, there are some v
 ### Employee Leaving Cohorts
 **When looking at the scatterplot below, there are three cohorts of employees can be seen to leave the company in a higher probability than the average employee.**
 
-![Employees_Leaving](../img/posts/salifort/employee_left_scatterplot.png)
+![Employees_Leaving](/img/posts/salifort/employee_left_scatterplot.png)
 
 <br>
 <br>
@@ -154,7 +154,7 @@ This is very insightful and by using the hue set to the target, there are some v
 ### Employee Staying
 **When looking at employees who stay, there is fairly evenly distributed scatter among these same characteristics. This signifies these three cohorts are significant.**
 
-![Employees_Staying](../img/posts/salifort/employee_stay_scatterplot.png)
+![Employees_Staying](/img/posts/salifort/employee_stay_scatterplot.png)
 
 <br>
 <br>
@@ -162,7 +162,7 @@ This is very insightful and by using the hue set to the target, there are some v
 ### Promotion in the Last 5 Years
 **There are very few employees who have gotten a promotion in the last 5 years, as can be seen in the plot below. Perhaps it needs to be adjusted for just employees who have been at the company for 5 years or more to have real significance. Because new employees would not be expected to have a promotion.**
 
-![Employee_Promotion](../img/posts/salifort/employee_promotion_last_5years.png)
+![Employee_Promotion](/img/posts/salifort/employee_promotion_last_5years.png)
 
 <br>
 <br>
@@ -181,7 +181,7 @@ ___
 
 ### Over Worked High Performer Visualization
 
-![over_worked_viz](../img/posts/salifort/overworked_low_satisfaction.png)
+![over_worked_viz](/img/posts/salifort/overworked_low_satisfaction.png)
 
 
 ### There are three main groups of employees who are likely to leave:
@@ -218,7 +218,7 @@ ___
 ___
 
 # Feature Importance <a name="feature-importance"></a>
-![model_feature_importance](../img/posts/salifort/xgboost_feat_imp.png)
+![model_feature_importance](/img/posts/salifort/xgboost_feat_imp.png)
 
 **Key Takeaways:**
 - **Average Monthly Hours**
@@ -241,7 +241,7 @@ Final Model: **Tuned XGBoost Classifier with All Features**
 
 
 #### Confusion Matrix on Test Set
-![confusion_matrix](../img/posts/salifort/best_model_confusion_matrix.png)
+![confusion_matrix](/img/posts/salifort/best_model_confusion_matrix.png)
 
 
 **From the Confusion Matrix it can be seen that the Accuracy is 98%**
@@ -283,11 +283,11 @@ For this case, **False Negatives are more important that False Positives**, beca
 
 ## Model Performance Comparison <a name="model-performance-comparison"></a>
 
-![model_comparison_recall](../img/posts/salifort/model_comparison_recall.png)
+![model_comparison_recall](/img/posts/salifort/model_comparison_recall.png)
 
-![model_comparison_f1](../img/posts/salifort/model_comparison_f1.png)
+![model_comparison_f1](/img/posts/salifort/model_comparison_f1.png)
 
-![model_comparison_roc_auc](../img/posts/salifort/model_comparison_roc_auc.png)
+![model_comparison_roc_auc](/img/posts/salifort/model_comparison_roc_auc.png)
 
 <br>
 <br>
