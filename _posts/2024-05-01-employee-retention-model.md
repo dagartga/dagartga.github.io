@@ -60,7 +60,7 @@ When dealing with employee data, it is important to remove any demographic data 
 ___
 
 # Github Repo <a name="github-repo"></a>
-[Github Repo Link](https://github.com/dagartga/Salifort_Motors_Employee_Retention_Project)
+### View the Github Repo Here: [Salifort Motors Repo](https://github.com/dagartga/Salifort_Motors_Employee_Retention_Project)
 
 <br>
 <br>
