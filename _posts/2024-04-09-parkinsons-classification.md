@@ -26,7 +26,7 @@ In this project, I created a web application that uses three boosted classificat
     - [SMOTE](#smote)
     - [Fine Tune Threshold](#tuned-threshold)
     - [Add Medication Data](#on-medication)
-- [05. Interpreting The Results](#interpret-results)
+- [05. Summary of Best Performing Models](#interpret-results)
 - [06. Model Explainability](#explainability)
 - [07. Growth & Next Steps](#growth-next-steps)
 - [Appendix: Footnotes](#footnotes)
@@ -987,7 +987,7 @@ ___
 
 ___
 
-## Summary of Best Performance Models
+## Summary of Best Performing Models <a name="interpret-results"></a>
 
 ### UPDRS 1 Prediction on Test Data
 
