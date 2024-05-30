@@ -71,8 +71,7 @@ ___
 
 An interesting experiment is to keep all of the values the same and simply adjust the "Years Spent at Salifort Motors" value. The probability of leaving will increase each of the first 4 years and then start to decline at 5 years and higher. This shows if employees make it to their 5 year work anniversary they are very likely to continue at the company. 
 
-#### View the Interactive Web App Here: 
-[Salifort Motors Project Web App](https://salifort-motors-employee-retention.streamlit.app/)
+### View the Interactive Web App Here:  [Salifort Motors Project Web App](https://salifort-motors-employee-retention.streamlit.app/)
 
 ![Streamlit_App](/img/posts/salifort/salifort_web_app_screenshot.png)
 
