@@ -30,7 +30,7 @@ Because the customer demographics are very different between the regions, **four
 
 ---
 
-## Dashboard
+## Interactive Dashboard
 
 <iframe seamless frameborder="0" src="https://public.tableau.com/views/UKBankAnalysis_17107761108470/UKBankCustomerAnalysis?:embed=yes&:display_count=yes&:showVizHome=no" width = '1090' height = '900'></iframe>
 
